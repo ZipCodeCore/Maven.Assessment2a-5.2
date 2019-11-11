@@ -53,16 +53,6 @@ public class MonthConversion {
             }
         }
         return (Integer)key;
-/*
-        Integer keyout = null;
-        Set keys = this.hm.keySet();
-        for (Object key : keys) {
-            if (this.hm.get(key).equals(monthName)) {
-                keyout = (Integer) key;
-                break;
-            }
-        }
-        return keyout; */
     }
 
     /**
