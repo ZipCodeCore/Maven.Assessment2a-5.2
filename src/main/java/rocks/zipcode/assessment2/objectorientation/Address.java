@@ -86,4 +86,12 @@ public class Address {
                 (this.getState().equals(addresscheck.getState())) &&
                 (this.getZipcode().equals(addresscheck.getZipcode()));
     }
+
+
+    @Override
+    public String toString(){
+
+        return String.format("Address{addressLine1='%s', addressLine2='%s', city='%s', state='%s', zipcode='%s'}",
+                                this.addressLine1, this.addressLine2, this.city, this.state, this.zipcode);
+    }
 }

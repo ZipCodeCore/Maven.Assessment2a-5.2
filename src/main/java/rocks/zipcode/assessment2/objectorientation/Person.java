@@ -52,9 +52,15 @@ public class Person {
 
     @Override
     public boolean equals(Object o) {
-        Person person = (Person) o;
-        return (this.getId().equals(person.getId())) &&
-                (this.getName().equals(person.getName())) &&
-                (this.getAddress().equals(person.getAddress()));
+        Person personCheck = (Person) o;
+
+        return (this.getId() == null ? personCheck.getId() == null : this.getId().equals(personCheck.getId())) &&
+                (this.getName() == null ? personCheck.getName() == null : this.getName().equals(personCheck.getName())) &&
+                (this.getAddress() == null ? personCheck.getAddress() == null : this.getAddress().equals(personCheck.getAddress()));
+    }
+
+    @Override
+    public String toString(){
+        return String.format("Person{id=%d, name='%s', address=%s}",this.getId(),this.getName(),this.getAddress().toString());
     }
 }
