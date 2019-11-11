@@ -25,12 +25,13 @@ public class StringArrayUtils {
                 count++;
                 i++;
 
-                if(startingIndex < 0 || endingIndex < 0){
-                    throw new IllegalArgumentException("no");
+                if(startingIndex < 0){
+                    System.out.println("no");
+                    throw new IndexOutOfBoundsException();
                 }
                 if(startingIndex > arrayToBeSpliced.length){
                     System.out.println("no");
-                    throw new IndexOutOfBoundsException();
+                    throw new IllegalArgumentException();
 
                 }
 
