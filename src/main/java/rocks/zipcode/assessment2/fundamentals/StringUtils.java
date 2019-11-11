@@ -1,6 +1,7 @@
 package rocks.zipcode.assessment2.fundamentals;
 
 import java.util.Collections;
+import java.util.regex.*;
 import java.util.stream.Collectors;
 
 /**
@@ -42,7 +43,7 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+        return string.matches("^[a-zA-Z\\s]");
     }
 
     /**
@@ -50,7 +51,7 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+        return string.matches("[0-9]");
     }
 
     /**
@@ -58,6 +59,6 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return null;
+        return string.matches("-/@#$%^&_+=()");
     }
 }
