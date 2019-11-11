@@ -3,6 +3,8 @@ package rocks.zipcode.assessment2.collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.sql.Types.NULL;
+
 /**
  * Use a map to solve
  */
@@ -48,12 +50,12 @@ public class MonthConversion {
      * @return - the ordinal of the month in the year
      */
     public int getNumber(String monthName) {
-        Integer key = 0;
+        Integer key = null;
         for(Map.Entry<Integer, String> entry : hm.entrySet()) {
             if (entry.getValue() == monthName) {
                 key = entry.getKey();
+                return key;
             }
-
         }
         return key;
     }

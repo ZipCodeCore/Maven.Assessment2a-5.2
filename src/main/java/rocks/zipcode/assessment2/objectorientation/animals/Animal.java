@@ -7,7 +7,7 @@ import rocks.zipcode.assessment2.objectorientation.Person;
  * @author leon on 29/11/2018.
  * @ATTENTION_TO_STUDENTS - Ensure that you have completed the `Person` class before attempting this class.
  */
-public class Animal {
+public class Animal extends Woofer{
     public Animal() {
         this.animalId = null;
         this.owner = new Person();

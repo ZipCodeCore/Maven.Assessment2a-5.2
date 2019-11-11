@@ -92,6 +92,21 @@ public class StringUtils {
         return false;
 
         */
-       return !isNumericString(string) && !isAlphaString(string);
+        Boolean isalpha = isAlphaString(string);
+        Boolean isnumeric = isNumericString(string);
+        Boolean isspecial = true;
+        if (isalpha || isnumeric) isspecial = false;
+
+        for (int i = 0; i < string.length(); i++) {
+            String strToCheck = String.valueOf(string.charAt(i));
+            if (strToCheck.toUpperCase().matches("[A-Z]")) {
+                isspecial = false;
+            } else if (strToCheck.matches("[0-9]")) {
+                isspecial = false;
+            }
+        }
+        return isspecial;
+
+      // return !isNumericString(string) && !isAlphaString(string);
     }
 }
