@@ -36,10 +36,7 @@ public class StringUtils {
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
 
-            for(int i = 0; i <= numberOfTimeToRepeat; i++){
-                stringToBeRepeated += stringToBeRepeated;
-            }
-        return stringToBeRepeated;
+        return new String(new char[numberOfTimeToRepeat]).replace("\0", stringToBeRepeated);
     }
 
     /**
