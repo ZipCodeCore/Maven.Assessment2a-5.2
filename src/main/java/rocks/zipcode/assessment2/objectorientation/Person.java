@@ -24,7 +24,10 @@ public class Person {
     }
 
     public String getName() {
-        return null;
+
+
+
+        return getName();
     }
 
     public void setName(String name) {
