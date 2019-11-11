@@ -13,9 +13,9 @@ public class Person {
      * @param address - address of person
      */
 
-    Address newAddress;
-    Long id;
-    String name;
+    Address newAddress = new Address();
+    Long id = Long.MIN_VALUE;
+    String name = "";
     Animal newPet;
 
     public Person(Long id, String name, Address address) {
@@ -51,6 +51,16 @@ public class Person {
 
     public void setAddress(Address address) {
         this.newAddress = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "newAddress=" + newAddress +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                ", newPet=" + newPet +
+                '}';
     }
 
     @Override
