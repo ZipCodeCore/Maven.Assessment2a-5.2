@@ -15,7 +15,6 @@ public class Shelter<T> implements Iterable<T> {
     private ArrayList<T> home;
     public Shelter() {
         this.home = new ArrayList<>();
-//        throw new NullPointerException();
     }
 
     public Iterator<T> iterator() {
