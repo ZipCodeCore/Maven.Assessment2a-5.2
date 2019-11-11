@@ -27,7 +27,17 @@ public class IntegerArrayUtils {
      * @return `integerArray` with `valueToBeInserted` at index number `indexToInsertAt`
      */
     public static Integer[] replace(Integer[] integerArray, int indexToInsertAt, Integer valueToBeInserted) {
-        return null;
+        Integer[] result = new Integer[integerArray.length];
+        int i = 0;
+        for (Integer value : integerArray){
+            if (i == indexToInsertAt) {
+                result[i] = valueToBeInserted;
+            }else {
+                result[i] = integerArray[i];
+            }
+            i++;
+        }
+        return result;
     }
 
     /**
