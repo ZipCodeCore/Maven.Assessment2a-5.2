@@ -9,7 +9,9 @@ package rocks.zipcode.assessment2.generics;
  * Shelter<Dog> dogHouse = new Shelter<Dog>();
  */
 public class Shelter<_> {
+
     public Shelter() {
+
         throw new NullPointerException();
     }
 
@@ -17,6 +19,7 @@ public class Shelter<_> {
      * @return the number of item in the shelter
      */
     public int size() {
+
         return -1;
     }
 
