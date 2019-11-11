@@ -17,7 +17,7 @@ public class BasicStringUtils {
     public static String reverse(String string1) {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < string1.length(); i++) {
-             builder.append(string1.charAt(i));
+            builder.append(string1.charAt(i));
         }
         return builder.reverse().toString();
     }
@@ -32,26 +32,31 @@ public class BasicStringUtils {
     }
 
     /**
-     * @param string - the string to be manipulated
+     * @param string             - the string to be manipulated
      * @param charactersToRemove - Characters that should be removed from `string`
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-//        StringBuilder builder = new StringBuilder();
-//        for (int i = 0; i < string.length(); i++) {
-//            builder.append(string.charAt(i));
-//        }
-//        for(int j = 0; j < builder.length(); j++) {
-//            for (int k = 0; k < charactersToRemove.length(); k++) {
-//if(builder.charAt(j) == charactersToRemove.charAt(k)) {
-//}
-//            }
-//
-        return string.replaceAll(charactersToRemove, string);
+        String result = string;
+        for (int j = 0; j < charactersToRemove.length(); j++) {
+                result = removeCharacter(result, charactersToRemove.charAt(j));
+            }
+        return result;
     }
 
+    public static String removeCharacter(String value, Character charToRemove) {
+        StringBuilder builderValue = new StringBuilder();
+        String strWithCharRemoved = "";
+        for(int i = 0; i < value.length(); i++) {
+            if(value.charAt(i) != charToRemove) {
+                builderValue.append(value.charAt(i));
+            }
+            strWithCharRemoved = builderValue.toString();
+        }
+        return strWithCharRemoved;
+    }
     /**
-     * @param string - the string to be manipulated
+     * @param string             - the string to be manipulated
      * @param charactersToRemove - characters to be removed from the string
      * @return reverse of `string` with `charactersToRemove` removed
      */
