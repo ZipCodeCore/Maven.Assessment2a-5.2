@@ -35,7 +35,8 @@ public class PredicateUtilities {
      * @return true if `value` is a multiple of `multiple`
      */
     public static Boolean isMultipleOfN(Integer value, Integer multiple) {
-        return null;
+
+        return value % multiple ==0;
     }
 
     /**
@@ -43,6 +44,6 @@ public class PredicateUtilities {
      * @return true if `string` starts with a capital letter
      */
     public static Boolean startsWithCapitalLetter(String string) {
-        return null;
+        return (string.charAt(0) == string.toUpperCase().charAt(0));
     }
 }
