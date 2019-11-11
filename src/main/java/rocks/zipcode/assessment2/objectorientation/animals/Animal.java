@@ -9,6 +9,7 @@ import rocks.zipcode.assessment2.objectorientation.Person;
  */
 public class Animal {
     public Animal() {
+        this.id = null;
     }
 
     /**

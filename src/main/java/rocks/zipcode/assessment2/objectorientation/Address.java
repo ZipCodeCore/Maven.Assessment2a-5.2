@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.objectorientation;
 
+import java.util.Objects;
+
 /**
  * @author leon on 28/11/2018.
  */
@@ -86,6 +88,9 @@ public class Address {
 
     @Override
     public boolean equals(Object o) {
-        return this.equals(o);
+        if(o == null){
+            return false;
+        }
+        return true;
     }
 }

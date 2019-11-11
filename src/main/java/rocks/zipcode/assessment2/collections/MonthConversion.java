@@ -32,6 +32,9 @@ public class MonthConversion {
      * @return the name of the respective month
      */
     public String getName(Integer monthNumber) throws NullPointerException{
+        if(!calendar.containsKey(monthNumber)){
+            return null;
+        }
         return calendar.get(monthNumber);
     }
 

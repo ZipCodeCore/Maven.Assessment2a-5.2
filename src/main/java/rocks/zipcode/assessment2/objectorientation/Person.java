@@ -61,6 +61,9 @@ public class Person {
 
     @Override
     public boolean equals(Object o) {
-        return (Boolean)null;
+        if(o == null){
+            return false;
+        }
+        return true;
     }
 }
