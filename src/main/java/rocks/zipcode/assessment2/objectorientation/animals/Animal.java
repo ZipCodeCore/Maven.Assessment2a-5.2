@@ -12,7 +12,6 @@ public class Animal {
 
     Person newOnwer;
     Long id;
-    Address address;
 
 
     public Animal() {
@@ -47,6 +46,6 @@ public class Animal {
     }
 
     public Address getAddress() {
-        return this.address;
+        return this.newOnwer.getAddress();
     }
 }

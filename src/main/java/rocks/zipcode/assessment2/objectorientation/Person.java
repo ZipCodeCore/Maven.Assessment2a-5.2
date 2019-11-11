@@ -55,6 +55,10 @@ public class Person {
 
     @Override
     public boolean equals(Object o) {
-        return (Boolean)null;
+        if (o instanceof Person){
+            Person x = (Person) o;
+            return (getAddress() == x.getAddress() && getId() == x.getId() && getName() == x.getName() );
+        }
+        return false;
     }
 }
