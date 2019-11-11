@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.arrays;
 
+import java.util.Arrays;
+
 /**
  * @author leon on 28/11/2018.
  */
@@ -10,7 +12,12 @@ public class IntegerArrayUtils {
      * @return - identical array with one additional element of `valueToBeAdded` at the end of the array
      */
     public static Integer[] add(Integer[] integerArray, Integer valueToBeAdded) {
-        return null;
+        Integer [] newArray = Arrays.copyOf(integerArray,integerArray.length+1);
+        for (int i = 0; i < integerArray.length; i++){
+            newArray[i] = integerArray[i];
+        }
+        newArray[integerArray.length] = valueToBeAdded;
+        return newArray;
     }
 
     /**
