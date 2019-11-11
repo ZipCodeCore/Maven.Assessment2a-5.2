@@ -18,7 +18,6 @@ public class Shelter<T> {
     private Shelter<Ageable> gimmieShelter;
 
     public Shelter() {
-        this.gimmieShelter = new Shelter<>();
 
         throw new NullPointerException();
     }
