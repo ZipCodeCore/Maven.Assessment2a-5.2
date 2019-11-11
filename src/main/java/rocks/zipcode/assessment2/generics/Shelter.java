@@ -16,7 +16,10 @@ public class Shelter<_> {
     /**
      * @return the number of item in the shelter
      */
-    public int size() { return  1;}
+    public int size() {
+
+        return 0;
+    }
 
     public void add(Object object) {
     }

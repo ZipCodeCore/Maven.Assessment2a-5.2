@@ -4,7 +4,7 @@ package rocks.zipcode.assessment2.objectorientation;
  * @author leon on 28/11/2018.
  * @ATTENTION_TO_STUDENTS - Ensure that you have completed the `Address` class before attempting this class
  */
-public class Person {
+public class Person extends Address{
     private Long id;
     private String name = "";
     private Address address;

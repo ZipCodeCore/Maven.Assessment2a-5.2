@@ -16,10 +16,12 @@ public class IntegerArrayUtils {
      * @return - identical array with one additional element of `valueToBeAdded` at the end of the array
      */
     public static Integer[] add(Integer[] integerArray, Integer valueToBeAdded) {
-        List<Integer> arrlist = new ArrayList<>(Arrays.asList(integerArray));
-        arrlist.add(valueToBeAdded);
+        List<Integer> list = new ArrayList<>();
+        for (Integer index : integerArray) {
+            list.add(valueToBeAdded);
 
-        return integerArray;
+        }
+        return list.toArray(new Integer[0]);
     }
     /**
      * @param integerArray - array to be manipulated
@@ -29,10 +31,9 @@ public class IntegerArrayUtils {
      */
     public static Integer[] replace(Integer[] integerArray, int indexToInsertAt, Integer valueToBeInserted) {
         List<Integer> list = new ArrayList<>();
-        for(Integer x : integerArray){
-            if(x.equals(indexToInsertAt)){
-                list.add(valueToBeInserted);
-            }
+        for (Integer index : integerArray) {
+            //list.replaceAll(valueToBeInserted);
+
         }
         return list.toArray(new Integer[0]);
     }
@@ -44,11 +45,12 @@ public class IntegerArrayUtils {
      */
     public static Integer get(Integer[] integerArray, Integer indexToFetch) {
         List<Integer> list = new ArrayList<>();
-        for(Integer x : integerArray){
-            if(x.equals(indexToFetch)){
-                list.get(x);
+        for (Integer x : integerArray) {
+            if (x.equals(indexToFetch)) {
+                Integer got = list.get(x);
             }
         }
+
         return null;
     }
 
@@ -65,7 +67,12 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1
      */
     public static Integer[] incrementEven(Integer[] integerArray) {
-        return null;
+
+        for(int i = 0; i < integerArray.length; i++)
+            if(integerArray[i] % 2 ==0)
+                integerArray[i] = (i+1);
+
+        return integerArray;
     }
 
     /**

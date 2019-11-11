@@ -9,7 +9,9 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
+
         return null;
+
     }
 
     /**
@@ -27,7 +29,12 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+       String repeatedString = null;
+        for (int i = 0; i <= numberOfTimeToRepeat; i++){
+            repeatedString = stringToBeRepeated + stringToBeRepeated;
+        }
+
+        return repeatedString;
     }
 
     /**
