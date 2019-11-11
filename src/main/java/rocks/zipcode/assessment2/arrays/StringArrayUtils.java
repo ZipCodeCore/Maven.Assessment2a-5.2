@@ -32,9 +32,10 @@ public class StringArrayUtils {
      */
     public static String[] getEndingArray(String[] arrayToBeSpliced, int startingIndex) {
 
-        if (startingIndex < 0 || startingIndex > arrayToBeSpliced.length){
-            String[] result = new String[arrayToBeSpliced.length];
-            return result;
+        if (startingIndex > arrayToBeSpliced.length) {
+            throw new IllegalArgumentException();
+        } else if (startingIndex < 0){
+            throw new IndexOutOfBoundsException();
         } else {
             int x = startingIndex;
             String[] result = new String[arrayToBeSpliced.length - startingIndex];
