@@ -76,7 +76,7 @@ public class Address {
     @Override
     public boolean equals(Object o) {
 
-        return (this == o);
+        return (this.toString().equals(o.toString()));
     }
 
     @Override

@@ -52,7 +52,7 @@ public class Person {
     @Override
     public boolean equals(Object o) {
         //Person person  =  new Person(this.id, this.name, this.address);
-        return (o == this);
+        return (this.toString().equals(o.toString()));
     }
 
     @Override
