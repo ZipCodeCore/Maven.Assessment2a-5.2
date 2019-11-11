@@ -37,14 +37,29 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        StringBuilder sb = new StringBuilder(string);
-        String[] splitChars = charactersToRemove.split("");
+        CharSequence remove = reverse(charactersToRemove);
+        String goodString = string.replaceAll((String) remove, "");
+        char[] justice = charactersToRemove.toCharArray();
+        int counter = 0;
+        String newString = "";
+        for (int i = 0; i < string.length(); i++){
 
-        for (String s : splitChars){
-           // sb.replace(s[0], "");
+            for (char c : justice){
+            if (string.charAt(i) == c){
+                String holder = "";
+                holder += c;
+                string.replace(holder, "");
+
+            }else{
+                newString += c;
+
+            }
+            }
+
+
         }
 
-        return sb.toString();
+        return newString;
     }
 
     /**
@@ -53,6 +68,7 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        String answer = removeCharacters(string,charactersToRemove);
+        return reverse(answer);
     }
 }
