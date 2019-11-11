@@ -10,7 +10,14 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return null;
+        if(stringToBePadded.length() > amountOfPadding)
+            return stringToBePadded;
+        StringBuilder result = new StringBuilder();
+        for(int i = 0; i < amountOfPadding - stringToBePadded.length(); i++){
+            result.append(" ");
+        }
+        result.append(stringToBePadded);
+        return result.toString();
     }
 
     /**
@@ -19,7 +26,14 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        return null;
+        if(stringToBePadded.length() > amountOfPadding)
+            return stringToBePadded;
+        StringBuilder result = new StringBuilder();
+        result.append(stringToBePadded);
+        for(int i = 0; i < amountOfPadding - stringToBePadded.length(); i++){
+            result.append(" ");
+        }
+        return result.toString();
     }
 
     /**
@@ -28,7 +42,17 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+        StringBuilder result = new StringBuilder();
+        for(int i = 0; i < numberOfTimeToRepeat; i++){
+            result.append(stringToBeRepeated);
+        }
+        return result.toString();
+    }
+
+
+
+    public static Boolean between(Character middle, Character first, Character second) {
+        return first <= middle && middle <= second;
     }
 
     /**
@@ -36,7 +60,12 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+        string = string.replace(" ", "");
+        for(int i = 0; i < string.length(); i++) {
+            if (!between(string.charAt(i), 'A', 'Z') && !between(string.charAt(i), 'a', 'z'))
+                return false;
+        }
+        return true;
     }
 
     /**
@@ -44,7 +73,11 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+        for(int i = 0; i < string.length(); i++) {
+            if(!between(string.charAt(i), '0', '9'))
+                return false;
+        }
+        return true;
     }
 
     /**
@@ -52,6 +85,10 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return null;
+        for(int i = 0; i < string.length(); i++) {
+            if(between(string.charAt(i), '0', '9') || between(string.charAt(i), 'A', 'Z') || between(string.charAt(i), 'a', 'z'))
+                return false;
+        }
+        return true;
     }
 }

@@ -16,7 +16,7 @@ public class AddressToStringTest {
 
         // when
         String actual = address.toString();
-
+        System.out.println(actual);
         // then
         Assert.assertEquals(expected, actual);
     }
