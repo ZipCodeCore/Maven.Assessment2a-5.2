@@ -13,7 +13,6 @@ public class Animal {
     private Address address;
 
     public Animal() {
-
     }
 
     /**

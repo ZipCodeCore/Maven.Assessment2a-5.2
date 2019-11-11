@@ -41,30 +41,23 @@ public class StringUtils {
      */
     public static Boolean isAlphaString(String string) {
         char[] chars = string.toCharArray();
-
         for (char alpha : chars) {
             if (Character.isLetter(alpha)) {
                 return true;
             }
-        }
-
-        return false;
+        }        return false;
     }
-
     /**
      * @param string - string to be evaluated
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
         char[] chars = string.toCharArray();
-
         for (char numeric : chars) {
             if (Character.isDigit(numeric)) {
                 return true;
             }
-        }
-
-        return false;
+        }        return false;
     }
 
     /**
@@ -73,9 +66,7 @@ public class StringUtils {
      */
     public static Boolean isSpecialCharacterString(String string) {
         Pattern pattern = Pattern.compile("[a-zA-Z0-9]*");
-
-        String str = "abc@";
-        Matcher matcher = pattern.matcher(str);
+        Matcher matcher = pattern.matcher(string);
 
         if (!matcher.matches()) {
             return false;
