@@ -3,10 +3,7 @@ package rocks.zipcode.assessment2.generics;
 
 import rocks.zipcode.assessment2.generics.ageable.Ageable;
 
-
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Spliterator;
+import java.util.*;
 import java.util.function.Consumer;
 
 /**
@@ -20,10 +17,11 @@ import java.util.function.Consumer;
 
 public class Shelter<_> implements Iterable<Ageable> {
 
-    public Shelter<Object> shelter;
+    List<Object> shelter;
 
     public Shelter() {
 
+        shelter = new ArrayList<Object>();
         //throw new NullPointerException();
     }
 
@@ -55,7 +53,7 @@ public class Shelter<_> implements Iterable<Ageable> {
     }
 
     public Integer getIndexOf(Object ageable) {
-        return shelter.getIndexOf(ageable);
+        return shelter.indexOf(ageable);
     }
 
     @Override
