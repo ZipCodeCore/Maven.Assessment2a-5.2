@@ -74,6 +74,11 @@ public class IntegerArrayUtils {
      * @return identical array with odd-values decremented by 1
      */
     public static Integer[] decrementOdd(Integer[] input) {
-        return null;
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] % 2 != 0) {
+                input[i] = input[i] - 1;
+
+            }
+        }   return input;
     }
 }
