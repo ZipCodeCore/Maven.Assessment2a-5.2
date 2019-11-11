@@ -4,6 +4,7 @@ package rocks.zipcode.assessment2.generics;
 import rocks.zipcode.assessment2.generics.ageable.Person;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ import java.util.List;
  * Shelter<Person> farmHouse = new Shelter<Person>();
  * Shelter<Dog> dogHouse = new Shelter<Dog>();
  */
-public class Shelter<_> {
+public class Shelter<_> implements Iterable{
 
     List newPerson;
 
@@ -47,5 +48,10 @@ public class Shelter<_> {
 
     public Integer getIndexOf(Object ageable) {
         return newPerson.indexOf(ageable);
+    }
+
+    @Override
+    public Iterator iterator() {
+        return null;
     }
 }
