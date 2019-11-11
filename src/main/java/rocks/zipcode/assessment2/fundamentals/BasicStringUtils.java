@@ -15,7 +15,12 @@ public class BasicStringUtils {
      * @return an identical string with characters in reverse order
      */
     public static String reverse(String string1) {
-        return null;
+        StringBuilder stringBuilder = new StringBuilder(string1);
+        stringBuilder.reverse();
+        string1 = stringBuilder.toString();
+
+
+        return string1;
     }
 
     /**
