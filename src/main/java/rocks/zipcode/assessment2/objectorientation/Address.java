@@ -4,17 +4,18 @@ package rocks.zipcode.assessment2.objectorientation;
  * @author leon on 28/11/2018.
  */
 public class Address {
-    String addressLine1;
-    String addressLine2;
-    String city;
-    String state;
-    String zipcode;
+    private String addressLine1;
+    private String addressLine2;
+    private String city;
+    private String state;
+    private String zipcode;
+
     public Address() {
-        addressLine1 = "";
-        addressLine2 = "";
-        city = "";
-        state = "";
-        zipcode = "";
+        this.addressLine1 = "";
+        this.addressLine2 = "";
+        this.city = "";
+        this.state = "";
+        this.zipcode = "";
     }
 
     /**
@@ -62,11 +63,9 @@ public class Address {
 
     public void setZipcode(String zipcode) { this.zipcode = zipcode; }
 
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        return false;
+        return true;
     }
 }

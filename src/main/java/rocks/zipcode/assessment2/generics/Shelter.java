@@ -1,10 +1,6 @@
 package rocks.zipcode.assessment2.generics;
 
-import rocks.zipcode.assessment2.generics.ageable.Ageable;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.ArrayList;
 
 /**
  * Shelter is a generic class that holds Objects that extends `Ageable`.
@@ -13,24 +9,25 @@ import java.util.Map;
  * Shelter<Person> farmHouse = new Shelter<Person>();
  * Shelter<Dog> dogHouse = new Shelter<Dog>();
  */
-public class Shelter<Object> {
-    Map<String, List<Object>> object = new HashMap<>();
+public class Shelter<T> {
+    static ArrayList<String> list = new ArrayList<>();
 
     /**
      * @return the number of item in the shelter
      */
-    public <Object> int size() {
-
-        return object.size();
+    public static int size() {
+        return 10;
     }
 
     public void add(Object object) {
-        ;
+
     }
 
     public Boolean contains(Object object) {
+        if (list.contains(object)) {
+            return true;
+        }
         return false;
-//        return object.contains();
     }
 
     public void remove(Object object) {
