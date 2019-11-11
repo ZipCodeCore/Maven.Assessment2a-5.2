@@ -15,13 +15,23 @@ public class StringArrayUtils {
      * @return an array with all elements between `startingIndex` and `endingIndex`
      */
     public static String[] getSubArray(String[] arrayToBeSpliced, int startingIndex, int endingIndex) {
+        ArrayList<String>list=new ArrayList<>();
 
 
+            for(int i = startingIndex;i<=endingIndex;i++){
+                list.add(arrayToBeSpliced[i]);
 
 
+            }
 
 
-        return null;
+        String[]arr=new String[list.size()];
+        list.toArray(arr);
+
+
+        return arr;
+
+
     }
 
 
