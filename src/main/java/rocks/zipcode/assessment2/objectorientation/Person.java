@@ -13,13 +13,13 @@ public class Person {
      * @param address - address of person
      */
 
-    Address newAddress = new Address();
+    Address address = new Address();
     Long id = Long.MIN_VALUE;
     String name = "";
     Animal newPet;
 
     public Person(Long id, String name, Address address) {
-        this.newAddress = address;
+        this.address = address;
         this.id = id;
         this.name = name;
     }
@@ -46,20 +46,19 @@ public class Person {
     }
 
     public Address getAddress() {
-        return this.newAddress;
+        return this.address;
     }
 
     public void setAddress(Address address) {
-        this.newAddress = address;
+        this.address = address;
     }
 
     @Override
     public String toString() {
         return "Person{" +
-                "newAddress=" + newAddress +
-                ", id=" + id +
+                "id=" + id +
                 ", name='" + name + '\'' +
-                ", newPet=" + newPet +
+                ", address=" + address +
                 '}';
     }
 
