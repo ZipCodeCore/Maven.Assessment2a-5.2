@@ -8,7 +8,10 @@ package rocks.zipcode.assessment2.generics;
  * Shelter<Person> farmHouse = new Shelter<Person>();
  * Shelter<Dog> dogHouse = new Shelter<Dog>();
  */
-public class Shelter<_> {
+public class Shelter<T> {
+
+    Shelter<T> shelter = new Shelter<>();
+
     public Shelter() {
         throw new NullPointerException();
     }
@@ -17,24 +20,27 @@ public class Shelter<_> {
      * @return the number of item in the shelter
      */
     public int size() {
-        return -1;
+        return shelter.size();
     }
 
     public void add(Object object) {
+        shelter.add(object);
     }
 
     public Boolean contains(Object object) {
-        return null;
+        if (shelter.contains(object)) {return true;}
+        return false;
     }
 
     public void remove(Object object) {
+        shelter.remove(object);
     }
 
     public Object get(Integer index) {
-        return null;
+        return shelter.get(index);
     }
 
     public Integer getIndexOf(Object ageable) {
-        return 0;
+        return shelter.getIndexOf(ageable);
     }
 }
