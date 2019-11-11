@@ -44,7 +44,18 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1 and odd-values decremented by 1
      */
     public static Integer[] incrementEvenDecrementOdd(Integer[] integerArray) {
-        return null;
+
+        Integer[] newArray = new Integer[integerArray.length];
+        int counter =0;
+        for (Integer value : integerArray){
+            if ((value % 2 == 0)) {
+                newArray[counter] = integerArray[counter] + 1;
+            } else {
+                newArray[counter] = integerArray[counter] - 1;
+            }
+            counter++;
+        }
+        return newArray;
     }
 
     /**
