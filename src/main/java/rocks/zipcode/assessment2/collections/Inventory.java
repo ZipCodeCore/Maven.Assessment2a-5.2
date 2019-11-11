@@ -7,13 +7,15 @@ import java.util.*;
  */
 public class Inventory {
     Map<String, Integer> inventory;
-    List<String> strings;
     /**
      * @param strings list of strings to add / remove / fetch from
      */
     public Inventory(List<String> strings) {
-        this.strings = strings;
+        this.inventory = new HashMap<>();
+        for (String item : strings) {
+            addItemToInventory(item);
         }
+    }
 
     /**
      * nullary constructor initializes a new list
