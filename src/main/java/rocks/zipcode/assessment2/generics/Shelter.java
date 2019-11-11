@@ -13,7 +13,7 @@ import rocks.zipcode.assessment2.generics.ageable.Person;
  */
 public class Shelter<T> {
 
-    Shelter<T> shelter = new Shelter<>();
+    Shelter<T> shelter = new Shelter<T>();
 
     public Shelter() {
         throw new NullPointerException();
