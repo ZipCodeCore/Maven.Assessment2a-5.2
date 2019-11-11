@@ -43,12 +43,12 @@ public class MonthConversion {
      * @return - the ordinal of the month in the year
      */
     public int getNumber(String monthName) {
-        for(Integer ordial : calendar.keySet()){
-            if(calendar.get(ordial).equals(monthName)){
+        for(Integer ordial : calendar.keySet()) {
+            if (calendar.get(ordial).equals(monthName)) {
                 return ordial;
             }
         }
-        return -1;
+        return 0;
     }
 
     /**
