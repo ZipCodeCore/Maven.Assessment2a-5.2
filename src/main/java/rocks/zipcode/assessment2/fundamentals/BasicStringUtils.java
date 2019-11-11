@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+import java.util.regex.Pattern;
+
 public class BasicStringUtils {
     /**
      * @param string1 - Base string to be added to
@@ -7,7 +9,7 @@ public class BasicStringUtils {
      * @return concatenation of `string1` and `string2`
      */
     public static String concatentate(String string1, String string2) {
-        return null;
+        return (string1 + string2);
     }
 
     /**
@@ -15,7 +17,18 @@ public class BasicStringUtils {
      * @return an identical string with characters in reverse order
      */
     public static String reverse(String string1) {
-        return null;
+        char[] reversedString = string1.toCharArray();
+        int start = 0;
+        int end = reversedString.length - 1;
+        char temp;
+        while (end > start) {
+            temp = reversedString[start];
+            reversedString[start] = reversedString[end];
+            reversedString[end] = temp;
+            end--;
+            start++;
+        }
+        return new String(reversedString);
     }
 
     /**
@@ -24,7 +37,8 @@ public class BasicStringUtils {
      * @return concatenation of the reverse of `string1` and reverse of `string2`
      */
     public static String reverseThenConcatenate(String string1, String string2) {
-        return null;
+        String reverseCat = reverse(string1) + reverse(string2);
+        return reverseCat;
     }
 
     /**
@@ -33,7 +47,8 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        return null;
+        String removeDeez = "[" + Pattern.quote(charactersToRemove) + "]";
+        return string.replaceAll(removeDeez, "");
     }
 
     /**
@@ -42,6 +57,6 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        return reverse(removeCharacters(string, charactersToRemove));
     }
 }

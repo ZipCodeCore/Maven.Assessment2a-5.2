@@ -1,7 +1,8 @@
 package rocks.zipcode.assessment2.atm;
 
-public class Account {
+import java.util.Random;
 
+public class Account {
     // this is only boiler plate. add your group's code here.
 
     // ********
@@ -9,23 +10,33 @@ public class Account {
     // See why you needed to get ATM finished this weekend??
     //
     // ********
-    
-    public Account(double v) {
+
+    private Double balance;
+    Random random = new Random();
+
+    public Account(Double balance) {
+        this.balance = balance;
     }
 
     public double balance() {
-        return 0.0;
+        return balance;
     }
 
     public boolean closeAccount() {
-        return false;
+        return true;
     }
 
-    public void deposit(double v) {
+    public void deposit(double amount) {
+        this.balance += amount;
+        String bal = String.format("%.2f",this.balance);
+        this.balance = Double.parseDouble(bal);
     }
 
-    public Double withdraw(double v) {
-        return 0.0;
+    public Double withdraw(double amount) {
+        if (this.balance >= amount) {
+            this.balance -= amount;
+        }
+        return balance;
     }
 
     public void transfer(Account b, double v) {
