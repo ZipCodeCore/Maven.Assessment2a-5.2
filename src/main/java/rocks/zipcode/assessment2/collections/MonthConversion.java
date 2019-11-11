@@ -6,7 +6,7 @@ import java.util.HashMap;
  * Use a map to solve
  */
 public class MonthConversion {
-    private HashMap<Integer, String> monthConversion;
+    private HashMap<Integer, String> monthConversionMap;
     private Integer monthNumber;
     private String monthName;
 
@@ -16,7 +16,7 @@ public class MonthConversion {
 //     */
 
     public MonthConversion()    {
-        monthConversion = new HashMap<Integer, String>();
+        monthConversionMap = new HashMap<Integer, String>();
 
 
     }
@@ -24,7 +24,7 @@ public class MonthConversion {
 
     public void add(Integer monthNumber, String monthName) {
 
-        monthConversion.put(monthNumber, monthName);
+        monthConversionMap.put(monthNumber, monthName);
 
     }
 
@@ -33,8 +33,10 @@ public class MonthConversion {
 //     * @return the name of the respective month
 //     */
     public String getName(Integer monthNumber) {
-
-        throw new NullPointerException(monthConversion.get(monthNumber));
+        if (monthNumber < 1 || monthNumber > 12) {
+            throw new NullPointerException("Invalid Number");
+        }
+         return monthConversionMap.get(monthNumber);
 
     }
 
@@ -51,7 +53,7 @@ public class MonthConversion {
      * @return true if the monthNumber is in the keySet
      */
     public Boolean isValidNumber(Integer monthNumber) {
-        return null;
+        return monthConversionMap.containsKey(monthNumber);
     }
 
     /**
