@@ -32,7 +32,9 @@ public class AddItemToInventroy {
         Inventory inventory = new Inventory();
         for(String item : itemsToAddToInventory) {
             int preAddQuantity = inventory.getItemQuantity(item);
+            System.out.print("Pre" + preAddQuantity);
             int postAddQuantity = preAddQuantity + 1;
+            System.out.println("Post" + postAddQuantity);
             int expected = postAddQuantity;
             inventory.addItemToInventory(item);
             int actual = inventory.getItemQuantity(item);

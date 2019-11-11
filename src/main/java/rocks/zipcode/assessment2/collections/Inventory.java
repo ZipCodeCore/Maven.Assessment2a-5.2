@@ -1,55 +1,72 @@
 package rocks.zipcode.assessment2.collections;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Use a map to keep track of inventory in a store
  */
 public class Inventory {
-    List<String> strings;
-    Map<String, Integer> inventoryMap;
+    ArrayList<String> strings;
+    Map<String, Integer> map;
+    Set<String> set;
 
     /**
      * @param strings list of strings to add / remove / fetch from
      */
-    public Inventory(List<String> strings) {
-        this.inventoryMap = new HashMap<String, Integer>();
+    public Inventory(ArrayList<String> strings) {
+        this.strings = strings;
+        this.map = new HashMap<>();
+        for (String item : new HashSet<>(this.strings)) {
+            this.map.replace(item, Collections.frequency(strings, item));
+        }
     }
 
     /**
      * nullary constructor initializes a new list
      */
     public Inventory() {
-        this.strings = new ArrayList<String>();
+        this.strings = new ArrayList<>();
+        this.map = new HashMap<>();
     }
 
     /**
      * @param item - increment the number of this item in stock by 1
      */
     public void addItemToInventory(String item) {
-        for(Map.Entry<String, Integer> entry: inventoryMap.entrySet()) {
-            if(entry.getKey().equals(item)) {
-                //entry.getValue() = entry.getValue() + 1;
-            }
+        Integer qty;
+        if (!map.containsKey(item)) {
+            map.put(item, 1);
+        } else {
+            qty = map.get(item);
+            map.replace(item, qty++);
+//            for (String product : new HashSet<>(this.strings)) {
+//                this.map.replace(product, qty + Collections.frequency(strings, product));
+//            }
         }
-        //return;
     }
+
 
     /**
      * @param item - decrement the number of this item in stock by 1
      */
     public void removeItemFromInventory(String item) {
-        inventoryMap.remove(item);
+        Integer qty = 0;
+
+        //for(String item: items) {
+        if (!map.containsKey(item))
+            map.put(item, 1);
+        else {
+            qty = map.get(item);
+            map.put(item, qty--);
+        }
     }
+
 
     /**
      * @param item - Search for this item in stock
      * @return - return the number of items
      */
     public Integer getItemQuantity(String item) {
-        return inventoryMap.get(item);
+        return map.get(item);
     }
 }

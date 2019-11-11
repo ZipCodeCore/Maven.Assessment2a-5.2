@@ -26,11 +26,8 @@ public class MonthConversion {
      * @return the name of the respective month
      */
     public String getName(Integer monthNumber) {
-
-        String name = (String) null;
-        if(!monthMap.containsKey(monthNumber))
-            throw new NullPointerException();
-        else {
+        String name = null;
+        if(monthMap.containsKey(monthNumber)) {
             for (Map.Entry<Integer, String> entry : monthMap.entrySet()) {
                 if (entry.getKey() == monthNumber)
                     name = entry.getValue();
@@ -43,11 +40,13 @@ public class MonthConversion {
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
-        int ordinal = (Integer) null;
-        for (Map.Entry<Integer, String> item : monthMap.entrySet()) {
-            if (item.getValue().equals(monthName))
-                ordinal = item.getKey();
+    public Integer getNumber(String monthName) {
+        Integer ordinal = null;
+        if(monthMap.containsValue(monthName)) {
+            for (Map.Entry<Integer, String> item : monthMap.entrySet()) {
+                if (item.getValue().equals(monthName))
+                    ordinal = item.getKey();
+            }
         }
         return ordinal;
     }
