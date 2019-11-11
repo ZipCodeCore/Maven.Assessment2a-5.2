@@ -15,7 +15,8 @@ public class PredicateUtilities {
      * @return true if `value` is not a multiple of 2
      */
     public static Boolean isOdd(Integer value) {
-        return null;
+
+        return value % 2 != 0;
     }
 
     /**
