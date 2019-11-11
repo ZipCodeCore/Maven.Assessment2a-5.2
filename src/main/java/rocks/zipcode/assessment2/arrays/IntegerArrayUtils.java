@@ -10,7 +10,14 @@ public class IntegerArrayUtils {
      * @return - identical array with one additional element of `valueToBeAdded` at the end of the array
      */
     public static Integer[] add(Integer[] integerArray, Integer valueToBeAdded) {
-        return null;
+        Integer[] tempArr = new Integer[integerArray.length + 1];
+        for(int i = 0; i < integerArray.length; i++)    {
+            tempArr[i] = integerArray[i];
+        }
+        tempArr[tempArr.length-1] = valueToBeAdded;
+        integerArray = tempArr;
+
+        return integerArray;
     }
 
     /**
