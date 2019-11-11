@@ -39,19 +39,19 @@ public class BasicStringUtils {
     public static String removeCharacters(String string, String charactersToRemove) {
         StringBuilder strBuilder = new StringBuilder();
         char[] rmString = charactersToRemove.toCharArray();
-        char[] oriString = string.toCharArray();
-
+       // char[] oriString = string.toCharArray();
+        String newString = string;
         //int j=0;
        for(int j= 0 ;j< rmString.length; j++) {
-           for (int i = 0; i < oriString.length; i++) {
+         /*for (int i = 0; i < oriString.length; i++) {
                 if (oriString[i] == rmString[j]) {
                        oriString[i] = '\0';
                 }
-            }
-        //  string.replace(rmString[j],'\0');
+            } */
+         newString = newString.replace(String.valueOf(rmString[j]),"");
        }
       //  return strBuilder.toString();
-       return oriString.toString();
+       return newString;
     }
 
     /**

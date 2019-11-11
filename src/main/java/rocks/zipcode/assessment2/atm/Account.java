@@ -45,7 +45,6 @@ public class Account {
 
 
         if (this.accountBalance < v) {
-            //b.deposit(accountBalance);
             b.accountBalance += this.accountBalance;
             this.withdraw(accountBalance);
 
