@@ -44,22 +44,14 @@ public class Account {
     }
 
     public void transfer(Account b, double v) {
-
-
         if (this.accountBalance <= v && v > 0) {
             b.accountBalance += v;
             this.withdraw(v);
-
         }
         else {
             b.accountBalance += this.accountBalance;
             this.withdraw(accountBalance);
-
-
-
         }
-
-
 
     }
 }
