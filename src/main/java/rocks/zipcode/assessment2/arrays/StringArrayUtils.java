@@ -1,5 +1,6 @@
 package rocks.zipcode.assessment2.arrays;
 
+import java.lang.IllegalArgumentException;
 import java.util.*;
 /**
  * @author leon on 28/11/2018.
@@ -11,12 +12,13 @@ public class StringArrayUtils {
      * @param endingIndex - ending index of array
      * @return an array with all elements between `startingIndex` and `endingIndex`
      */
-    public static String[] getSubArray(String[] arrayToBeSpliced, int startingIndex, int endingIndex) {
-        ArrayList<String>al = new ArrayList<>(Arrays.asList(arrayToBeSpliced));
-             List<String>al2 = al.subList(startingIndex, endingIndex);
-             String[]array1 = al2.toArray(new String[al2.size()]);
-        return array1;
-    }
+    public static String[] getSubArray(String[] arrayToBeSpliced, int startingIndex, int endingIndex) throws IllegalArgumentException {
+            ArrayList<String> al = new ArrayList<>(Arrays.asList(arrayToBeSpliced));
+            List<String> al2 = al.subList(startingIndex, endingIndex);
+            String[] array1 = al2.toArray(new String[al2.size()]);
+
+            return array1;
+        }
 
 
     /**
