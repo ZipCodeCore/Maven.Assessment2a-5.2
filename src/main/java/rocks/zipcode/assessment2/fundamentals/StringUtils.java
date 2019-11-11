@@ -22,7 +22,11 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        return null;
+
+        String result = "";
+
+        result = String.format("%-" + amountOfPadding + "s",stringToBePadded);
+        return result;
     }
 
     /**
