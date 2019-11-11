@@ -80,5 +80,11 @@ public class Address {
     }else{
             return  false;
         }
-}
+    }
+        public String toString(){
+
+        String answer = "Address{addressLine1=" + firstAddressLine+ ", addressLine2=" + secondAddressLine+ ", city=" + cityOfResidence+ ", state=" + stateOfResidence + ", zipcode=" + zipcodeOfResidence + "}";
+    return answer;
+    }
+
 }
