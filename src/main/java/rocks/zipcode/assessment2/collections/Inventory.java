@@ -11,14 +11,14 @@ import java.util.Map;
 public class Inventory {
     private List<String> strings;
     private String item;
-    private Map<String, ArrayList<String>> map = new LinkedHashMap<>();
+    private Map<String, Integer> map;
 
     /**
      * @param strings list of strings to add / remove / fetch from
      */
     public Inventory(List<String> strings) {
         this.strings = new ArrayList<> (strings);
-        this.map = map;
+        this.map = new LinkedHashMap<>(0);
     }
 
     /**
@@ -26,7 +26,7 @@ public class Inventory {
 
      */
     public Inventory() {
-        this.map = map;
+        this.map = new LinkedHashMap<>(0);
         this.strings = new ArrayList<>(0);
 
     }
@@ -35,9 +35,14 @@ public class Inventory {
      * @param item - increment the number of this item in stock by 1
      */
     public void addItemToInventory(String item) {
-
-        this.strings.add(item);
-        map.put(item, (ArrayList) strings);
+//        for (String myItem : strings)
+        int preItemQuantity = getItemQuantity(item);
+        int postAddedQuantity = preItemQuantity + 1;
+        map.put(item, postAddedQuantity);
+//
+//                (map.get(item));
+//        this.strings.add(item);
+//        map.put(item, (ArrayList) strings);
     }
 
     /**
@@ -45,7 +50,7 @@ public class Inventory {
      */
     public void removeItemFromInventory(String item) {
 
-        this.strings.remove(item);
+        map.remove(item);
     }
 
     /**
@@ -54,6 +59,6 @@ public class Inventory {
      */
     public Integer getItemQuantity(String item) {
 
-        return null;
+        return map.get(item);
     }
 }
