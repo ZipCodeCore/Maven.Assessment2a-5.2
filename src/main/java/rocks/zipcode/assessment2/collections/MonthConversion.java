@@ -1,5 +1,9 @@
 package rocks.zipcode.assessment2.collections;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
 /**
  * Use a map to solve
  */
@@ -8,24 +12,40 @@ public class MonthConversion {
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
      * @param monthName - name of month
      */
-    public void add(Integer monthNumber, String monthName) {
+    Map<Integer,String> monthList = new TreeMap<>();
 
+    public void add(Integer monthNumber, String monthName) {
+        monthList.put(monthNumber,monthName);
     }
 
     /**
      * @param monthNumber - ordinal of month in the year
      * @return the name of the respective month
      */
-    public String getName(Integer monthNumber) {
-        throw new NullPointerException();
+    public String getName(Integer monthNumber) throws NullPointerException {
+
+        try {
+            return monthList.get(monthNumber);
+        } catch (NullPointerException e){
+            return  e.getMessage();
+        }
+
     }
 
     /**
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
-        return (Integer)null;
+    public Integer getNumber(String monthName) {
+        Integer result = 0;
+
+        for (Map.Entry<Integer,String> value : monthList.entrySet()){
+            if (monthName.equals(value.getValue())){
+                result = value.getKey();
+                return result;
+            }
+        }
+        return null;
     }
 
     /**
@@ -33,7 +53,7 @@ public class MonthConversion {
      * @return true if the monthNumber is in the keySet
      */
     public Boolean isValidNumber(Integer monthNumber) {
-        return null;
+        return monthList.containsKey(monthNumber);
     }
 
     /**
@@ -41,14 +61,14 @@ public class MonthConversion {
      * @return true if the monthName is in the valueSet
      */
     public Boolean isValidMonth(String monthName) {
-        return null;
+        return monthList.containsValue(monthName);
     }
 
     /**
      * @return number of entries in this mapping
      */
     public Integer size() {
-        return -1;
+        return monthList.size();
     }
 
     /**
@@ -56,6 +76,6 @@ public class MonthConversion {
      * @param monthName - name of month
      */
     public void update(Integer monthNumber, String monthName) {
-
+        monthList.replace(monthNumber,monthName);
     }
 }
