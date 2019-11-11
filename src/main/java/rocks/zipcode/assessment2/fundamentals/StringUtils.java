@@ -1,5 +1,4 @@
 package rocks.zipcode.assessment2.fundamentals;
-
 /**
  * @author leon on 28/11/2018.
  */
@@ -10,7 +9,9 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
+
         return null;
+
     }
 
     /**
@@ -28,7 +29,12 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+       String repeatedString = null;
+        for (int i = 0; i <= numberOfTimeToRepeat; i++){
+            repeatedString = stringToBeRepeated + stringToBeRepeated;
+        }
+
+        return repeatedString;
     }
 
     /**
@@ -36,7 +42,14 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+
+        for (int i = 0; i <string.length(); i++) {
+            Character index = string.trim().charAt(i);
+            if ((!(index >= 'a' && index <= 'z')) && (!(index >= 'A' && index <= 'Z'))) ;
+            i++;
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -44,7 +57,13 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+        for (int i = 0; i <string.length(); i++) {
+            Character index = string.trim().charAt(i);
+            if ((!(index >= '0' && index <= '9')));
+            i++;
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -52,6 +71,6 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return null;
+        return (!isAlphaString(string) && isNumericString(string));
     }
 }
