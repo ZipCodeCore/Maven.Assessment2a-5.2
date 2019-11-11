@@ -52,7 +52,7 @@ public class MonthConversion {
      * @return true if the monthNumber is in the keySet
      */
     public Boolean isValidNumber(Integer monthNumber) {
-        return null;
+        return monthList.containsKey(monthNumber);
     }
 
     /**
@@ -60,7 +60,7 @@ public class MonthConversion {
      * @return true if the monthName is in the valueSet
      */
     public Boolean isValidMonth(String monthName) {
-        return null;
+        return monthList.containsValue(monthName);
     }
 
     /**
