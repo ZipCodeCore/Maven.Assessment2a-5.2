@@ -1,5 +1,8 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+import java.util.Collections;
+import java.util.stream.Collectors;
+
 /**
  * @author leon on 28/11/2018.
  */
@@ -28,8 +31,11 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+        String newString = Collections.nCopies(numberOfTimeToRepeat, stringToBeRepeated).stream().collect(Collectors.joining(""));
+
+        return newString;
     }
+
 
     /**
      * @param string - string to be evaluated
