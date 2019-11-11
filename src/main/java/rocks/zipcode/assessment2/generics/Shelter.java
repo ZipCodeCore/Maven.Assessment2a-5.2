@@ -13,6 +13,7 @@ public class Shelter<_> {
         throw new NullPointerException();
     }
 
+
     /**
      * @return the number of item in the shelter
      */

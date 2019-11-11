@@ -99,9 +99,7 @@ public class Account {
     }
 
     public void transfer(Account b, double v) {
-//        if (v> this.balance){}
-//          else {
-              b.withdraw(v);
-        }
+        this.balance -= v;
+    }
 }
 

@@ -40,42 +40,23 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-
-
-
-
-        //int length = charactersToRemove.length();
-        String[] charactersArray = charactersToRemove.split("");
-        String blank = "";
-       String[] stringArray = string.split("");
-       for (int i=0; i < charactersToRemove.length() - 1; i++)
-       {
-           string.replaceAll(charactersArray[i], "");
-       }
-        return string;
-
-//       for (int i = 0; i< string.length(); i++) {
-//           for (int j = 0; j < charactersArray.length; j++)
-//                if (!stringArray[i].equals(charactersArray[j])) {
-//                blank += stringArray[i];
-//            }
-//        }
-//        return blank;
-
-
-//
-//        StringBuilder sb = new StringBuilder(string);
-//       String[] charactersArray = new String[charactersToRemove.length()];
-//       String [] stringArray = string.split("");
-//       ArrayList<String> stringList = new ArrayList<>(Arrays.asList(stringArray));
-//        for (int i = 0; i < stringList.size(); i++) {
-//            if (!stringList.get(i).equals(charactersArray[i])){
-//                stringList.add(stringList.get(i));
-//            }
-//        }
-//       return stringList
-
-       //return string.replaceAll(charactersToRemove, "");
+    String [] stringArray = string.split("");
+    ArrayList <String> stringList = new ArrayList<>(Arrays.asList(stringArray));
+    String [] charsToRemoveArray = charactersToRemove.split("");
+        for (int i = 0; i < stringList.size(); i++) {
+            for (int j = 0; j < charsToRemoveArray.length; j++){
+                if(stringList.get(i).equals(charsToRemoveArray[j])){
+                    stringList.remove(stringList.get(i));
+                }
+            }
+        }
+    String [] resultArray = new String[stringList.size()];
+        resultArray = stringList.toArray(resultArray);
+        String returnString = "";
+        for (int i = 0; i < resultArray.length; i++){
+            returnString += resultArray[i];
+        }
+        return returnString;
     }
 
     /**
