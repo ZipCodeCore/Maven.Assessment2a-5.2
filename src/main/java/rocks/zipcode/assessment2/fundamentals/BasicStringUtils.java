@@ -7,7 +7,7 @@ public class BasicStringUtils {
      * @return concatenation of `string1` and `string2`
      */
     public static String concatentate(String string1, String string2) {
-        return null;
+        return string1.concat(string2);
     }
 
     /**
@@ -15,7 +15,11 @@ public class BasicStringUtils {
      * @return an identical string with characters in reverse order
      */
     public static String reverse(String string1) {
-        return null;
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(string1);
+        sb.reverse();
+    return sb.toString();
     }
 
     /**
@@ -24,7 +28,7 @@ public class BasicStringUtils {
      * @return concatenation of the reverse of `string1` and reverse of `string2`
      */
     public static String reverseThenConcatenate(String string1, String string2) {
-        return null;
+        return reverse(string1).concat(reverse(string2));
     }
 
     /**
@@ -33,7 +37,21 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        return null;
+        StringBuilder strBuilder = new StringBuilder();
+        char[] rmString = charactersToRemove.toCharArray();
+       // char[] oriString = string.toCharArray();
+        String newString = string;
+        //int j=0;
+       for(int j= 0 ;j< rmString.length; j++) {
+         /*for (int i = 0; i < oriString.length; i++) {
+                if (oriString[i] == rmString[j]) {
+                       oriString[i] = '\0';
+                }
+            } */
+         newString = newString.replace(String.valueOf(rmString[j]),"");
+       }
+      //  return strBuilder.toString();
+       return newString;
     }
 
     /**
@@ -42,6 +60,6 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        return reverse(removeCharacters(string,charactersToRemove));
     }
 }
