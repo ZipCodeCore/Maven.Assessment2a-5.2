@@ -4,6 +4,11 @@ package rocks.zipcode.assessment2.objectorientation;
  * @author leon on 28/11/2018.
  */
 public class Address {
+    String addressLine1;
+    String addressLine2;
+    String city;
+    String state;
+    String zipcode;
     public Address() {
     }
 
@@ -15,6 +20,7 @@ public class Address {
      * @param zipcode - zipcode of region
      */
     public Address(String addressLine1, String addressLine2, String city, String state, String zipcode) {
+
     }
 
     public String getAddressLine1() {

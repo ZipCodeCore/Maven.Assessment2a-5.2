@@ -10,7 +10,9 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return null;
+       return String.format("%1$"+ amountOfPadding+ "s", stringToBePadded);
+
+
     }
 
     /**
@@ -19,7 +21,8 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        return null;
+
+        return String.format("%-" + amountOfPadding + "s" ,stringToBePadded);
     }
 
     /**
@@ -28,7 +31,9 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+        return String.format("%0" + numberOfTimeToRepeat+"d", 0).replace("0", stringToBeRepeated);
+
+
     }
 
     /**
@@ -36,7 +41,15 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+        char []charArray=string.toCharArray();
+        for(int i=0;i<charArray.length;i++){
+            if(Character.isLetter(charArray[i])){
+                return true;
+            }
+
+            }
+        return false ;
+
     }
 
     /**
@@ -44,7 +57,18 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+        char []charArray=string.toCharArray();
+        for(int i=0;i<charArray.length;i++){
+            if(Character.isDigit(charArray[i])){
+                return true;
+            }
+
+
+
+        }
+        return false ;
+
+
     }
 
     /**
@@ -52,6 +76,17 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return null;
+        char []charArray=string.toCharArray();
+        for(int i=0;i<charArray.length;i++){
+            /*if((Character.isDigit(charArray[i])&&Character.isSpaceChar(charArray[i]))
+                    ||(Character.isLetter(charArray[i])&&Character.isSpaceChar(charArray[i]))
+                    ||Character.isSpaceChar(charArray[i]))*/
+
+            if(Character.isSpaceChar(charArray[i]))
+            {
+              return true;
+            }
+        }
+        return false;
     }
 }
