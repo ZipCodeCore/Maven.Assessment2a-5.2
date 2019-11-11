@@ -4,7 +4,7 @@ package rocks.zipcode.assessment2.objectorientation;
  * @author leon on 28/11/2018.
  * @ATTENTION_TO_STUDENTS - Ensure that you have completed the `Address` class before attempting this class
  */
-public class Person {
+public class Person implements Comparable{
     /**
      * @param id - id of person
      * @param name - name of person
@@ -50,20 +50,24 @@ public class Person {
     }
 
     public String toString(){
-        String addressLine1 = this.personAddress.getAddressLine1();
-        String addressLine2 = this.personAddress.getAddressLine2();
-        String city = this.personAddress.getCity();
-        String state = this.personAddress.getState();
-        String zipcode = this.personAddress.getZipcode();
 
         StringBuilder address = new StringBuilder();
-        address.append(String.format("Address{addressLine1='%s', addressLine2='%s', city='%s', state='%s', zipcode='%s'",addressLine1,addressLine2,city,state,zipcode));
+        address.append(String.format("Person{id=%s, name='%s', address=%s}",getId(),getName(),getAddress().toString()));
+       // address.append(String.format("Address{addressLine1='%s', addressLine2='%s', city='%s', state='%s', zipcode='%s'",addressLine1,addressLine2,city,state,zipcode));
         return address.toString();
-    }
 
+    }
 
     @Override
     public boolean equals(Object o) {
-        return (Boolean)null;
+
+        if (this.toString().equals(o.toString()))
+            return true;
+        else return false;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return this.toString().compareTo(o.toString()) ; //todo may have to change
     }
 }

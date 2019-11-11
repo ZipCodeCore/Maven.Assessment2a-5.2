@@ -72,10 +72,16 @@ public class Address {
         this.zipcode = zipcode;
     }
 
+    public String toString(){
+
+        StringBuilder address = new StringBuilder();
+        address.append(String.format("Address{addressLine1='%s', addressLine2='%s', city='%s', state='%s', zipcode='%s'}",getAddressLine1(),getAddressLine2(),getCity(),getState(),getZipcode()));
+        return address.toString();
+    }
     @Override
     public boolean equals(Object o) {
-        Boolean compareObjects = false;
-
-        return (Boolean)compareObjects;
+        if (this.toString().equals(o.toString()))
+            return true;
+        else return false;
     }
 }
