@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * Shelter<Person> farmHouse = new Shelter<Person>();
  * Shelter<Dog> dogHouse = new Shelter<Dog>();
  */
-public class Shelter<Object_> {
+public class Shelter<Object_> implements iterable {
     private ArrayList<Object_> home;
     public Shelter() {
 

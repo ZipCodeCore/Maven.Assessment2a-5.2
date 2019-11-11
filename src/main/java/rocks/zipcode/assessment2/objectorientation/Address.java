@@ -1,23 +1,25 @@
 package rocks.zipcode.assessment2.objectorientation;
 
+import java.util.Objects;
+
 /**
  * @author leon on 28/11/2018.
  */
 public class Address {
 
-    private String addressLine1;
-    private String addressLine2;
-    private String city;
-    private String state;
-    private String zipcode;
+    private String addressLine1 = "";
+    private String addressLine2 = "";
+    private String city = "";
+    private String state = "";
+    private String zipcode = "";
 
 
     public Address() {
-        this.addressLine1 = "";
-        this.addressLine2 = "";
-        this.city = "";
-        this.state = "";
-        this.zipcode = "";
+//        this.addressLine1 = "";
+//        this.addressLine2 = "";
+//        this.city = "";
+//        this.state = "";
+//        this.zipcode = "";
     }
 
 
@@ -84,6 +86,13 @@ public class Address {
 
     @Override
     public boolean equals(Object o) {
-        return (Boolean)null;
+
+        Address compare = (Address)o;
+        if (!compare.addressLine1.equals(this.addressLine1)) return false;
+        if (!compare.addressLine2.equals(this.addressLine2)) return false;
+        if (!compare.city.equals(this.city)) return false;
+        if (!compare.state.equals(this.state)) return false;
+        if (!compare.zipcode.equals(this.zipcode)) return false;
+        return true;
     }
 }

@@ -39,10 +39,12 @@ public class Animal {
     }
 
     public void setOwner(Person owner) {
+
         this.owner = owner;
     }
 
     public Address getAddress() {
+
         return owner.getAddress();
     }
 }
