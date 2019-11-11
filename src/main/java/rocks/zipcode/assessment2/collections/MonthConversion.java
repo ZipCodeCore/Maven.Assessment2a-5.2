@@ -4,11 +4,16 @@ package rocks.zipcode.assessment2.collections;
  * Use a map to solve
  */
 public class MonthConversion {
+    private String monthName;
+    private Integer monthNumber;
+
     /**
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
      * @param monthName - name of month
      */
     public void add(Integer monthNumber, String monthName) {
+        this.monthNumber = monthNumber;
+        this.monthName = monthName;
 
     }
 
@@ -18,6 +23,7 @@ public class MonthConversion {
      */
     public String getName(Integer monthNumber) {
         throw new NullPointerException();
+
     }
 
     /**

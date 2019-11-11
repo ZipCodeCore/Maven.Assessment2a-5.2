@@ -13,9 +13,6 @@ public class Animal {
     private Address address;
 
     public Animal() {
-            id = 55L;
-            owner = null;
-            address = null;
 
     }
 

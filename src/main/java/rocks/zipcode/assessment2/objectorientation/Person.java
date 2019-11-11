@@ -21,6 +21,9 @@ public class Person{
     }
 
     public Person() {
+        address = new Address();
+        id = 55L;
+        name = "Eddie";
     }
 
     public Long getId() {

@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.objectorientation;
 
+import java.util.concurrent.Delayed;
+
 /**
  * @author leon on 28/11/2018.
  */
@@ -11,6 +13,11 @@ public class Address {
     private  String zipcode;
 
     public Address() {
+        addressLine2 = "818 woodlawn ave";
+        addressLine1 = "34 Arden ave";
+        city = "Wilmington";
+        state = "Delaware";
+        zipcode = "19720";
     }
 
     /**
@@ -26,6 +33,10 @@ public class Address {
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
+    }
+    public String toString()
+    {
+        return addressLine1 + ": " + addressLine2 +"," + city + ", " + state + " " + zipcode;
     }
 
     public String getAddressLine1() {
