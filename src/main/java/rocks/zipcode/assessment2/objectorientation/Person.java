@@ -14,15 +14,15 @@ public class Person {
      * @param address - address of person
      */
     public Person(Long id, String name, Address address) {
-        this.id = id;
-        this.name = name;
-        this.address = address;
+        this.setId(id);
+        this.setName(name);
+        this.setAddress(address);
     }
 
     public Person() {
-        this.name="";
-        this.id=Long.MIN_VALUE;
-        this.address=new Address();
+        this.setName("");
+        this.setId(0L);
+        this.setAddress(new Address());
     }
 
     public Long getId() {

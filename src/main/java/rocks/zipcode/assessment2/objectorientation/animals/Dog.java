@@ -5,7 +5,8 @@ package rocks.zipcode.assessment2.objectorientation.animals;
  * @ATTENTION_TO_STUDENTS - Ensure that you completed the `Animal` class before attempting this class
  */
 public class Dog {
+
     public String speak() {
-        return "Bark!";
+        return "Woof!\nWoof!";
     }
 }

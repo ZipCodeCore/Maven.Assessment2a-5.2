@@ -30,17 +30,13 @@ public class Address {
      * @param zipcode - zipcode of region
      */
     public Address(String addressLine1, String addressLine2, String city, String state, String zipcode) {
-        ArrayList<String>address= new ArrayList<>();
         this.addressLine1 = addressLine1;
         this.addressLine2 = addressLine2;
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
-        address.add(addressLine1);
-        address.add(addressLine2);
-        address.add(city);
-        address.add(state);
-        address.add(zipcode);
+
+
 
     }
 
@@ -86,9 +82,7 @@ public class Address {
 
     @Override
     public boolean equals(Object o) {
-        Address address1 = new Address(addressLine1,addressLine2,city,state,zipcode);
-        Address address2 = new Address(addressLine1,addressLine2,city,state,zipcode);
-        return address1 == address2;
+      return false;
     }
 
 }
