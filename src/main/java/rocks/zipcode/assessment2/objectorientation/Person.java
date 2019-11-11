@@ -66,4 +66,13 @@ public class Person {
         if(!this.getName().equals(tempPerson.getName())) return false;
         return this.getId().equals(tempPerson.getId());
     }
+
+    @Override
+    public String toString() {
+        return new StringBuilder()
+                .append("Person{id=" + getId() + ",")
+                .append(" name='" + name + "',")
+                .append(" address=" + getAddress() + "}")
+                .toString();
+    }
 }
