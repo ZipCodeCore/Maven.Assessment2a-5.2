@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.atm;
 
+import java.util.ArrayList;
+
 public class Account {
 
     // this is only boiler plate. add your group's code here.
@@ -9,7 +11,7 @@ public class Account {
     // See why you needed to get ATM finished this weekend??
     //
     // ********
-    
+
     public Account(double v) {
     }
 
