@@ -27,8 +27,17 @@ public class StringUtils {
      * @param numberOfTimeToRepeat - number of times to repeat `stringToBeRepeated`
      * @return the string repeated and concatenated `n` times
      */
-    public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+    public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat){
+        String in = stringToBeRepeated;
+
+        StringBuilder b = new StringBuilder(numberOfTimeToRepeat * in.length());
+        for (int i = 0; i < numberOfTimeToRepeat; i += 1) {
+            b.append(in);
+        }
+        String newString = b.toString();
+
+
+        return newString;
     }
 
     /**
@@ -60,6 +69,6 @@ public class StringUtils {
      */
     public static Boolean isSpecialCharacterString(String string) {
 
-        return null;
+        return (string == null) ? false : string.matches("[^A-Za-z0-9 ]");
     }
 }

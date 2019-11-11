@@ -47,7 +47,6 @@ public class BasicStringUtils {
         String sentence = string.replaceAll(charactersToRemove,"");
 
 
-
         return sentence;
     }
 
@@ -57,7 +56,10 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
+        String sentence = string.replaceAll(charactersToRemove,"");
 
-        return null;
+
+
+        return reverse(sentence);
     }
 }
