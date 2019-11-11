@@ -13,7 +13,9 @@ public class StringArrayUtils {
      * @return an array with all elements between `startingIndex` and `endingIndex`
      */
     public static String[] getSubArray(String[] arrayToBeSpliced, int startingIndex, int endingIndex) throws IndexOutOfBoundsException, IllegalArgumentException {
-        String[] shortArr = new String[endingIndex - startingIndex-1];
+//        String[] shortArr = new String[endingIndex - startingIndex-1];
+        ArrayList<String> subArr = new ArrayList<>();
+
         return null;
     }
 
@@ -24,10 +26,14 @@ public class StringArrayUtils {
      * @return an array all elements between after `startingIndex`
      */
     public static String[] getEndingArray(String[] arrayToBeSpliced, int startingIndex) throws IllegalArgumentException {
-        ArrayList<String> endingArr = new ArrayList<>();
-        for (int i = startingIndex ; i < arrayToBeSpliced.length ;  i ++){
-            endingArr.add(startingIndex, arrayToBeSpliced[i]);
+
+        ArrayList<String> lastHalf = new ArrayList<>();
+        for (int j = startingIndex; j < arrayToBeSpliced.length ; j++) {
+                lastHalf.add(arrayToBeSpliced[startingIndex+j]);
         }
-        return (String[]) endingArr.toArray();
+        if (startingIndex > arrayToBeSpliced.length){
+            throw new IllegalArgumentException();
+        }
+        return lastHalf.toArray(new String[0]);
     }
 }

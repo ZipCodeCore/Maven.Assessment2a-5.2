@@ -40,13 +40,18 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        String result = "" ;
-        for (int i=0 ; i < string.length()-1 ; i++){
-            if (string.charAt(i) != charactersToRemove.charAt(i)){
-                result += string.charAt(i);
-            }
-        }
-        return result;
+//        String result = "" ;
+//        for (int i = 0 ; i < string.length() ; i++){
+//            if (string.charAt(i) != charactersToRemove.charAt(i)){
+//                result += string.charAt(i);
+//            }
+//        }
+//        System.out.println(result);
+//        return result;
+        String result = "";
+        for (int i = 0 ; i < charactersToRemove.length() ; i ++){
+        result = string.replaceAll(String.valueOf(charactersToRemove.charAt(i)), "");
+        } return result;
     }
 
     /**
