@@ -28,15 +28,15 @@ public class Shelter<T extends Ageable> implements Iterable{
         return list.size();
     }
 
-    public void add(Object object) {
-        list.add((T) object);
+    public void add(T object) {
+        list.add(object);
     }
 
-    public Boolean contains(Object object) {
+    public Boolean contains(T object) {
         return list.contains(object);
     }
 
-    public void remove(Object object) {
+    public void remove(T object) {
         list.remove(object);
     }
 
@@ -44,7 +44,7 @@ public class Shelter<T extends Ageable> implements Iterable{
         return list.get(index);
     }
 
-    public Integer getIndexOf(Object ageable) {
+    public Integer getIndexOf(T ageable) {
         for (int i = 0 ; i < list.size(); i++) {
             if (list.get(i).equals(ageable)){
                 return i;
