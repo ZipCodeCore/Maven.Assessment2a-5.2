@@ -10,24 +10,31 @@ public class Person {
      * @param name - name of person
      * @param address - address of person
      */
+    Long id = 0L ;
+    String name = "";
+    Address personAddress = new Address();
     public Person(Long id, String name, Address address) {
+        this.id = id;
+        this.name = name;
     }
 
     public Person() {
     }
 
     public Long getId() {
-        return null;
+        return id;
     }
 
     public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
-        return null;
+        return name;
     }
 
     public void setName(String name) {
+        this.name = name;
     }
 
     public Address getAddress() {
