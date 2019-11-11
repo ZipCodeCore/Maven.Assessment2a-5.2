@@ -46,6 +46,6 @@ public class Shelter<_> {
     }
 
     public Integer getIndexOf(Object ageable) {
-        return 0;
+        return newPerson.indexOf(ageable);
     }
 }
