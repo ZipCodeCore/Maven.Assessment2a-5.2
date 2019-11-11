@@ -18,6 +18,7 @@ public class BasicStringUtils {
      * @return an identical string with characters in reverse order
      */
     public static String reverse(String string1) {
+        result = "";
 
         for(int index = string1.length() - 1; index >= 0; index--)
             result += string1.charAt(index);
@@ -44,8 +45,22 @@ public class BasicStringUtils {
      * @param charactersToRemove - Characters that should be removed from `string`
      * @return `string` with `charactersToRemove` removed
      */
-    public static String removeCharacters(String string, String charactersToRemove) {
+    public static String removeCharacters(String string, String charactersToRemove){
         result = "";
+        boolean check;
+
+        for(int index = 0; index < string.length(); index++){
+            check = true;
+            for(int x = 0; x < charactersToRemove.length(); x++ ) {
+                if (string.charAt(index) == charactersToRemove.charAt(x)) {
+                    check = false;
+                }
+
+            }
+            if(check)
+                result += string.charAt(index);
+
+        }
 
         return result;
     }
@@ -56,6 +71,7 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+
+        return reverse(removeCharacters(string, charactersToRemove));
     }
 }
