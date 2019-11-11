@@ -54,8 +54,10 @@ public class StringUtils {
     public static Boolean isAlphaString(String string) {
         boolean result = false;
         char [] chars = string.toCharArray();
-
         for (char value : chars){
+            if (Character.isDigit(value)){
+                break;
+            }
              result = Character.isLetter(value);
         }
         return result;
@@ -70,6 +72,9 @@ public class StringUtils {
         char [] chars = string.toCharArray();
 
         for (char value : chars){
+            if (Character.isLetter(value)){
+                break;
+            }
             result = Character.isDigit(value);
         }
 

@@ -45,8 +45,15 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
+        String letterToRemove;
+        String result = string;
 
-        return string.replaceAll(charactersToRemove,"");
+        for (int i = 0; i < charactersToRemove.length(); i++){
+            letterToRemove = String.valueOf(charactersToRemove.charAt(i));
+             result = result.replaceAll(letterToRemove,"");
+        }
+
+        return result;
 
     }
 
