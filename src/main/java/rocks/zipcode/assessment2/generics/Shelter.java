@@ -1,16 +1,27 @@
 package rocks.zipcode.assessment2.generics;
 
 
+import rocks.zipcode.assessment2.generics.ageable.Ageable;
+
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+
 /**
  * Shelter is a generic class that holds Objects that extends `Ageable`.
  * For example, if a Person and a Dog extends Ageable, then I can declare the following:
  * <p>
  * Shelter<Person> farmHouse = new Shelter<Person>();
+ *
  * Shelter<Dog> dogHouse = new Shelter<Dog>();
  */
-public class Shelter<_> {
+
+public class Shelter<_> implements Iterable<Ageable> {
+
     public Shelter() {
-        throw new NullPointerException();
+
+
+        //throw new NullPointerException();
     }
 
     /**
@@ -36,5 +47,20 @@ public class Shelter<_> {
 
     public Integer getIndexOf(Object ageable) {
         return 0;
+    }
+
+    @Override
+    public Iterator<Ageable> iterator() {
+        return null;
+    }
+
+    @Override
+    public void forEach(Consumer<? super Ageable> action) {
+
+    }
+
+    @Override
+    public Spliterator<Ageable> spliterator() {
+        return null;
     }
 }
