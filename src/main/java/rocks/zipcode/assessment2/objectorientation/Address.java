@@ -88,9 +88,9 @@ public class Address {
 
     @Override
     public boolean equals(Object o) {
-        if(o != this){
-            return false;
+        if(o == this){
+            return true;
         }
-        return true;
+        return false;
     }
 }
