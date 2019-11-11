@@ -16,9 +16,9 @@ public class Inventory {
     public Inventory(ArrayList<String> strings) {
         this.strings = strings;
         this.map = new HashMap<>();
-        for (String item : new HashSet<>(this.strings)) {
-            this.map.replace(item, Collections.frequency(strings, item));
-        }
+//        for (String item : new HashSet<>(this.strings)) {
+//            this.map.put(item, Collections.frequency(strings, item));
+//        }
     }
 
     /**
@@ -26,22 +26,18 @@ public class Inventory {
      */
     public Inventory() {
         this.strings = new ArrayList<>();
-        this.map = new HashMap<>();
+//        this.map = new HashMap<>();
     }
 
     /**
      * @param item - increment the number of this item in stock by 1
      */
     public void addItemToInventory(String item) {
-        Integer qty;
         if (!map.containsKey(item)) {
             map.put(item, 1);
         } else {
-            qty = map.get(item);
-            map.replace(item, qty++);
-//            for (String product : new HashSet<>(this.strings)) {
-//                this.map.replace(product, qty + Collections.frequency(strings, product));
-//            }
+            //newQty = newQty + map.get(item);
+            map.replace(item, map.get(item) + 1);
         }
     }
 
