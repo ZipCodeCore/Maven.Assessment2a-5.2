@@ -47,7 +47,7 @@ public class IntegerArrayUtils {
      */
     public static Integer[] incrementEvenDecrementOdd(Integer[] integerArray) {
         for (int i = 0; i < integerArray.length; i++) {
-            if (i % 2 == 1) {
+            if (integerArray[i] % 2 == 0) {
                 integerArray[i]++;
             } else {
                 integerArray[i]--;
@@ -62,7 +62,7 @@ public class IntegerArrayUtils {
      */
     public static Integer[] incrementEven(Integer[] integerArray) {
         for (int i = 0; i < integerArray.length; i++) {
-            if (!(i % 2 == 0)) {
+            if (integerArray[i] % 2 == 0) {
                 integerArray[i]++;
             }
         }

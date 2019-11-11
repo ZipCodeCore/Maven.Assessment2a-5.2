@@ -1,7 +1,6 @@
 package rocks.zipcode.assessment2.fundamentals;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class BasicStringUtils {
     /**
@@ -44,16 +43,15 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        ArrayList<String> result= new ArrayList<>();
+        ArrayList<String> result = new ArrayList<>();
         String[] str = string.split("");
         String[] charsToGo = charactersToRemove.split("");
 
-        for(int i=0;i<str.length;i++) {
+        for (int i = 0; i < str.length; i++) {
             for (int j = 0; j < charsToGo.length; j++) {
                 if (charsToGo[j] == str[i]) {
                     continue;
-                }
-                else {
+                } else {
                     result.add(str[i]);
                 }
             }
@@ -61,11 +59,11 @@ public class BasicStringUtils {
         return result.toString();
     }
 
-                /**
-                 * @param string             - the string to be manipulated
-                 * @param charactersToRemove - characters to be removed from the string
-                 * @return reverse of `string` with `charactersToRemove` removed
-                 */
+    /**
+     * @param string             - the string to be manipulated
+     * @param charactersToRemove - characters to be removed from the string
+     * @return reverse of `string` with `charactersToRemove` removed
+     */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
         String[] charsToRemove = string.split(charactersToRemove);
         String strNew = string.replaceAll(charactersToRemove, "");
@@ -73,5 +71,5 @@ public class BasicStringUtils {
         String newStr = sb2.toString();
         return newStr;
     }
-            }
+}
 
