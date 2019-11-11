@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+import com.sun.xml.internal.bind.v2.TODO;
+
 public class BasicStringUtils {
     /**
      * @param string1 - Base string to be added to
@@ -43,7 +45,8 @@ public class BasicStringUtils {
      * @param charactersToRemove - Characters that should be removed from `string`
      * @return `string` with `charactersToRemove` removed
      */
-    public static String removeCharacters(String string, String charactersToRemove) {
+    public static String removeCharacters(String string, String charactersToRemove) {   //TODO lookup regex for remove characters
+
         String newString = string.replace(charactersToRemove, "");
         string = newString;
 
@@ -56,6 +59,11 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        String newString = string.replace(charactersToRemove, "");
+        StringBuilder stringBuilder1 = new StringBuilder(newString);
+        stringBuilder1.reverse();
+        string = stringBuilder1.toString();
+
+        return string;
     }
 }
