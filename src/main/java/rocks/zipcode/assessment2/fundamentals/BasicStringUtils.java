@@ -1,6 +1,7 @@
 package rocks.zipcode.assessment2.fundamentals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BasicStringUtils {
     /**
@@ -43,20 +44,13 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        ArrayList<String> result = new ArrayList<>();
-        String[] str = string.split("");
-        String[] charsToGo = charactersToRemove.split("");
-
-        for (int i = 0; i < str.length; i++) {
-            for (int j = 0; j < charsToGo.length; j++) {
-                if (charsToGo[j] == str[i]) {
-                    continue;
-                } else {
-                    result.add(str[i]);
-                }
-            }
+        String result = "";
+        char[] charArr = charactersToRemove.toCharArray();
+        for (int i = 0; i < charArr.length; i++) {
+            result = string.replaceAll(String.valueOf(charArr[i]), "");
+            charArr[i]++;
         }
-        return result.toString();
+        return result;
     }
 
     /**
@@ -65,7 +59,6 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        String[] charsToRemove = string.split(charactersToRemove);
         String strNew = string.replaceAll(charactersToRemove, "");
         StringBuilder sb2 = new StringBuilder(strNew).reverse();
         String newStr = sb2.toString();
