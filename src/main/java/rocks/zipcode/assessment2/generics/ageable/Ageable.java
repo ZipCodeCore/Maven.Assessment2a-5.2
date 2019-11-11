@@ -7,6 +7,7 @@ import java.util.Objects;
  * @ATTENTION_TO_STUDENTS - You are forbidden from modifying this class.
  */
 public abstract class Ageable {
+
     private int yearOfBirth;
 
     public Ageable() {

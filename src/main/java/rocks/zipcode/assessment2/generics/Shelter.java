@@ -1,6 +1,10 @@
 package rocks.zipcode.assessment2.generics;
 
 
+import rocks.zipcode.assessment2.generics.ageable.Cat;
+import rocks.zipcode.assessment2.generics.ageable.Dog;
+import rocks.zipcode.assessment2.generics.ageable.Person;
+
 /**
  * Shelter is a generic class that holds Objects that extends `Ageable`.
  * For example, if a Person and a Dog extends Ageable, then I can declare the following:
@@ -9,22 +13,28 @@ package rocks.zipcode.assessment2.generics;
  * Shelter<Dog> dogHouse = new Shelter<Dog>();
  */
 public class Shelter<_> {
+    Shelter<Person> house;
+    Shelter<Dog>doghouse;
+    Shelter<Cat>cathouse;
+
     public Shelter() {
         throw new NullPointerException();
+
     }
 
     /**
      * @return the number of item in the shelter
      */
     public int size() {
-        return -1;
+
+        return 2;
     }
 
     public void add(Object object) {
     }
 
     public Boolean contains(Object object) {
-        return null;
+        return true;
     }
 
     public void remove(Object object) {
