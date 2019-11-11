@@ -11,11 +11,12 @@ public class StringUtils {
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
 
-        char[] toCharArray = stringToBePadded.toCharArray();
-
-        String newStr = stringToBePadded.copyValueOf(toCharArray, amountOfPadding, (toCharArray.length + amountOfPadding));
-
-        return newStr;
+//        char[] toCharArray = stringToBePadded.toCharArray();
+//
+//        String newStr = stringToBePadded.copyValueOf(toCharArray, amountOfPadding, (toCharArray.length + amountOfPadding));
+//
+//        return newStr;
+        return String.format("%" + amountOfPadding + "s", stringToBePadded);
     }
 
     /**
@@ -24,7 +25,8 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        return null;
+
+        return String.format("%-" + amountOfPadding + "s", stringToBePadded);
     }
 
     /**
