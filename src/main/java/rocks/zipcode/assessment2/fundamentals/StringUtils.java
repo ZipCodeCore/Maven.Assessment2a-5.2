@@ -48,7 +48,7 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return string.matches("[a-zA-Z0-9- ]*");
+        return string.matches("[a-zA-Z- ]*");
     }
 
     /**
