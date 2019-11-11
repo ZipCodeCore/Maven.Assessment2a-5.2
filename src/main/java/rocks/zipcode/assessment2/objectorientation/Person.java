@@ -21,7 +21,7 @@ public class Person {
     }
 
     public Person() {
-        this.id = 0L;
+        this.id = Long.MIN_VALUE;
         this.name = "";
         this.residence = new Address();
     }
@@ -53,9 +53,13 @@ public class Person {
     //@Override
     public boolean equals(Person o) {
         boolean ans = this.id == o.getId() &&
-                this.name == o.getName() &&
+                this.name.equals(o.getName()) &&
                 this.residence == o.getAddress();
 
         return ans;
     }
+
+    @Override
+    public String toString(){ return "Person{id=" + this.getId() + ", name='" + this.getName() +
+        "', address=" + this.residence.toString() + "}";    }
 }
