@@ -36,15 +36,16 @@ public class MonthConversion {
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
-        int result = 0;
+    public Integer getNumber(String monthName) {
+        Integer result = 0;
+
         for (Map.Entry<Integer,String> value : monthList.entrySet()){
             if (monthName.equals(value.getValue())){
                 result = value.getKey();
                 return result;
             }
         }
-        return result;
+        return null;
     }
 
     /**
