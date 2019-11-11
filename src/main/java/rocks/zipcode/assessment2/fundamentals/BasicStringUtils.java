@@ -44,7 +44,10 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        return null;
+        String newString = string.replace(charactersToRemove, "");
+        string = newString;
+
+        return string;
     }
 
     /**
