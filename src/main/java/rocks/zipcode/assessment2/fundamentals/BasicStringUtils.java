@@ -29,7 +29,13 @@ public class BasicStringUtils {
      * @return concatenation of the reverse of `string1` and reverse of `string2`
      */
     public static String reverseThenConcatenate(String string1, String string2) {
-        return null;
+        StringBuilder stringBuilder1 = new StringBuilder(string1);
+        StringBuilder stringBuilder2 = new StringBuilder(string2);
+        stringBuilder1.reverse();
+        stringBuilder2.reverse();
+        String string3 = stringBuilder1.toString() + stringBuilder2.toString();
+
+        return string3;
     }
 
     /**
