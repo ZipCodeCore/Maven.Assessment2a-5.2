@@ -16,7 +16,7 @@ public class StringArrayUtils {
      */
     public static String[] getSubArray(String[] arrayToBeSpliced, int startingIndex, int endingIndex) {
 
-        List<String> list=new ArrayList(Arrays.asList(arrayToBeSpliced));
+
 
 
 

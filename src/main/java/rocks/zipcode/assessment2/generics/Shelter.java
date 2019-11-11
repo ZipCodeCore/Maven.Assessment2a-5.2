@@ -10,7 +10,7 @@ package rocks.zipcode.assessment2.generics;
  */
 public class Shelter<_> {
     public Shelter() {
-        throw new NullPointerException();
+        //throw new NullPointerException();
     }
 
     /**

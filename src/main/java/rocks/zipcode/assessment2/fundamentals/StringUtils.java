@@ -43,10 +43,12 @@ public class StringUtils {
     public static Boolean isAlphaString(String string) {
         char []charArray=string.toCharArray();
         for(int i=0;i<charArray.length;i++){
-            if(Character.isLetter(charArray[i])){
-                return true;
-            }
+            if(Character.isLetter(charArray[i])) {
 
+                return true;
+
+            }
+break;
             }
         return false ;
 
@@ -62,7 +64,7 @@ public class StringUtils {
             if(Character.isDigit(charArray[i])){
                 return true;
             }
-
+         break;
 
 
         }
@@ -86,6 +88,7 @@ public class StringUtils {
             {
               return true;
             }
+            break;
         }
         return false;
     }
