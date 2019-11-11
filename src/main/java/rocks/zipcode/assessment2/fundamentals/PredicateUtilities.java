@@ -44,6 +44,15 @@ public class PredicateUtilities {
      * @return true if `string` starts with a capital letter
      */
     public static Boolean startsWithCapitalLetter(String string) {
-        return (string.charAt(0) == string.toUpperCase().charAt(0));
+
+        boolean result = false;
+        char [] chars = string.toCharArray();
+        for (char value : chars){
+            if (Character.isLetterOrDigit(value)){
+                return (string.charAt(0) == string.toUpperCase().charAt(0));
+            }
+        }
+        return result;
+
     }
 }
