@@ -36,7 +36,13 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+        boolean result = false;
+        char [] chars = string.toCharArray();
+
+        for (char value : chars){
+             result = Character.isLetter(value);
+        }
+        return result;
     }
 
     /**
@@ -44,7 +50,14 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+        boolean result = false;
+        char [] chars = string.toCharArray();
+
+        for (char value : chars){
+            result = Character.isDigit(value);
+        }
+
+        return result;
     }
 
     /**
