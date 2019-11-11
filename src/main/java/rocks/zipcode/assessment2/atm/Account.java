@@ -1,6 +1,7 @@
 package rocks.zipcode.assessment2.atm;
 
 public class Account {
+    private final double v;
 
     // this is only boiler plate. add your group's code here.
 
@@ -11,6 +12,7 @@ public class Account {
     // ********
     
     public Account(double v) {
+        this.v = v;
     }
 
     public double balance() {
