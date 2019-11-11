@@ -1,8 +1,6 @@
 package rocks.zipcode.assessment2.atm;
 
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,16 +8,18 @@ import static org.junit.Assert.assertEquals;
 // Test the expected Account class from ATM.
 public class AccountTest {
 
+    public Double v ;
+
     @Test
     public void testA0() {
         Account a = new Account(0.0);
-        assertEquals(0.0, a.balance(), 0.0001);
+        assertEquals(0.0, a.balance(v), 0.0001);
     }
 
     @Test
     public void testA00() {
         Account a = new Account(10.0);
-        assertEquals(10.0, a.balance(), 0.0001);
+        assertEquals(10.0, a.balance(v), 0.0001);
     }
 
     @Test
@@ -38,14 +38,14 @@ public class AccountTest {
     public void testA1() {
         Account a = new Account(0.0);
         a.deposit(100.0);
-        assertEquals(100.0, a.balance(), 0.0001);
+        assertEquals(100.0, a.balance(v), 0.0001);
     }
 
     @Test
     public void testA2() {
         Account a = new Account(10.0);
         a.deposit(100.0);
-        assertEquals(110.0, a.balance(), 0.0001);
+        assertEquals(110.0, a.balance(v), 0.0001);
     }
 
     @Test
@@ -67,8 +67,8 @@ public class AccountTest {
         Account a = new Account(10.0);
         Account b = new Account(0.0);
         a.transfer(b, 10.0);
-        assertEquals(0.0, a.balance(), 0.0001);
-        assertEquals(10.0, b.balance(), 0.0001);
+        assertEquals(0.0, a.balance(v), 0.0001);
+        assertEquals(10.0, b.balance(v), 0.0001);
     }
 
     @Test
@@ -76,8 +76,8 @@ public class AccountTest {
         Account a = new Account(10.0);
         Account b = new Account(0.0);
         a.transfer(b, 100.0); // nothing should happen
-        assertEquals(10.0, a.balance(), 0.0001);
-        assertEquals(0.0, b.balance(), 0.0001);
+        assertEquals(10.0, a.balance(v), 0.0001);
+        assertEquals(0.0, b.balance(v), 0.0001);
     }
 
 
