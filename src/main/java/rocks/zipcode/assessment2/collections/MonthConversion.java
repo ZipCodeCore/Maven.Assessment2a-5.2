@@ -37,7 +37,6 @@ public class MonthConversion {
         Set set = month.entrySet();
         Iterator i = set.iterator();
         Integer result = null;
-        Integer output = null;
         while(i.hasNext()){
             Map.Entry map = (Map.Entry) i.next();
             if(monthName.equals(map.getValue())){
