@@ -2,6 +2,7 @@ package rocks.zipcode.assessment2.collections;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import static java.sql.Types.NULL;
 
@@ -13,27 +14,16 @@ public class MonthConversion {
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
      * @param monthName - name of month
      */
-    HashMap<Integer,String> hm = new HashMap<Integer,String>();
+    HashMap<Integer,String> hm;
     public MonthConversion()
     {
-     /*   hm.put(1,"January");
-        hm.put(2,"February");
-        hm.put(3,"March");
-        hm.put(4,"April");
-        hm.put(5,"May");
-        hm.put(6,"June");
-        hm.put(7,"July");
-        hm.put(8,"August");
-        hm.put(9,"September");
-        hm.put(10,"October");
-        hm.put(11,"November");
-        hm.put(12,"December"); */
+        this.hm = new HashMap<Integer, String>();
     }
 
     public void add(Integer monthNumber, String monthName) {
-
-        hm.put(monthNumber,monthName);
-
+        if (!this.hm.containsValue(monthName) && !this.hm.containsKey(monthNumber)) {
+            hm.put(monthNumber, monthName);
+        }
     }
 
     /**
@@ -41,7 +31,12 @@ public class MonthConversion {
      * @return the name of the respective month
      */
     public String getName(Integer monthNumber) {
-        return hm.get(monthNumber).toString();
+      //  return hm.get(monthNumber).toString();
+        String monthName = null;
+        if (this.hm.containsKey(monthNumber)) {
+            monthName = this.hm.get(monthNumber);
+        }
+        return monthName;
 
     }
 
@@ -49,15 +44,25 @@ public class MonthConversion {
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
-        Integer key = null;
+    public Integer getNumber(String monthName) {
+       Integer key = null;
         for(Map.Entry<Integer, String> entry : hm.entrySet()) {
             if (entry.getValue() == monthName) {
                 key = entry.getKey();
-                return key;
+                return (Integer)key;
             }
         }
-        return key;
+        return (Integer)key;
+/*
+        Integer keyout = null;
+        Set keys = this.hm.keySet();
+        for (Object key : keys) {
+            if (this.hm.get(key).equals(monthName)) {
+                keyout = (Integer) key;
+                break;
+            }
+        }
+        return keyout; */
     }
 
     /**
