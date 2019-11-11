@@ -47,8 +47,8 @@ public class Person extends Address{
         this.address = address;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        return (Boolean)null;
-    }
+  //  @Override
+   // public boolean equals(Object o) {
+      //  return (Boolean)null;
+    //}
 }

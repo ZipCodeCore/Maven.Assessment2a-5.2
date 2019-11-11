@@ -63,9 +63,10 @@ public class StringUtils {
     public static Boolean isNumericString(String string) {
         for (int i = 0; i <string.length(); i++) {
             Character index = string.trim().charAt(i);
-            if ((!(index >= '0' && index <= '9')));
-            i++;
-            return false;
+            if ((!(index >= '0' && index <= '9'))) {
+                i++;
+                return false;
+            }
         }
         return true;
     }
