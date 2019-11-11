@@ -73,12 +73,7 @@ public class Address {
     }
 
     public String toString (){
-        String [] add = new String [5];
-        add[0] = addressLine1;
-        add[1] = addressLine2;
-        add[2] = city;
-        add[3] = state;
-        add[4] = zipcode;
+
        return "Address{addressLine1=" +"'" +getAddressLine1() + "',"+ " " + "addressLine2=" + "'" +getAddressLine2() +"'," + " " + "city="+"'" + getCity() + "'," + " " +"state=" + "'" + getState() + "'," + " " +"zipcode=" + "'" + getZipcode() + "'" + "}";
     }
     //Correct this
