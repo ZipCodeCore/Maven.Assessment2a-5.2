@@ -1,6 +1,15 @@
 package rocks.zipcode.assessment2.atm;
 
+import java.security.InvalidParameterException;
+
 public class Account {
+    protected Double balance;
+    private String accountName;
+
+
+
+
+
 
     // this is only boiler plate. add your group's code here.
 
@@ -9,25 +18,46 @@ public class Account {
     // See why you needed to get ATM finished this weekend??
     //
     // ********
-    
-    public Account(double v) {
+
+    public Account(Double balance) {
+        this.balance = balance;
     }
 
     public double balance() {
-        return 0.0;
+        return balance;
     }
 
     public boolean closeAccount() {
         return false;
     }
 
-    public void deposit(double v) {
-    }
+    public Double deposit(double v) {
+        if (v < 0) {
+            throw new InvalidParameterException();
+        }
+        this.balance = balance + v;
+        return balance;
 
+   }
     public Double withdraw(double v) {
-        return 0.0;
+        if (v < 0) {
+            throw new InvalidParameterException();
+        }
+        if(this.balance >= v) {
+            this.balance = balance - v;
+            return balance;
+        }
+        return balance;
     }
 
-    public void transfer(Account b, double v) {
+    public Double transfer(Account b, double v) {
+        if (v < 0) {
+            throw new InvalidParameterException();
+        }
+        if(this.balance >= v) {
+            this.withdraw(v);
+            b.deposit(v);
+        }
+        return b.balance;
     }
 }

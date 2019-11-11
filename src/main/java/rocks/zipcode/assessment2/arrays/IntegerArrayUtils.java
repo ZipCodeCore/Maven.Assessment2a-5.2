@@ -31,7 +31,8 @@ public class IntegerArrayUtils {
     public static Integer[] replace(Integer[] integerArray, int indexToInsertAt, Integer valueToBeInserted) {
 
 
-        return null;
+
+        return null ;
     }
 
     /**
@@ -79,9 +80,10 @@ public class IntegerArrayUtils {
         for (int i = 0; i < input.length; i++)
 
 
-            if ((i - 1) % 2 == 1)
-                input[i]++;
+            if (i % 2 == 1) {
 
+                input[i]-=1;
+            }
             return input;
     }
 }
