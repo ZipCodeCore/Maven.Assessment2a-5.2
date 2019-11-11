@@ -1,15 +1,24 @@
 package rocks.zipcode.assessment2.collections;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Use a map to solve
  */
 public class MonthConversion {
+    Map<Integer, String> monthMap;
+
+    public MonthConversion() {
+        this.monthMap = new HashMap<>();
+    }
+
     /**
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
-     * @param monthName - name of month
+     * @param monthName   - name of month
      */
     public void add(Integer monthNumber, String monthName) {
-
+        monthMap.put(monthNumber, monthName);
     }
 
     /**
@@ -17,7 +26,17 @@ public class MonthConversion {
      * @return the name of the respective month
      */
     public String getName(Integer monthNumber) {
-        throw new NullPointerException();
+
+        String name = (String) null;
+        if(!monthMap.containsKey(monthNumber))
+            throw new NullPointerException();
+        else {
+            for (Map.Entry<Integer, String> entry : monthMap.entrySet()) {
+                if (entry.getKey() == monthNumber)
+                    name = entry.getValue();
+            }
+        }
+        return name;
     }
 
     /**
@@ -25,37 +44,42 @@ public class MonthConversion {
      * @return - the ordinal of the month in the year
      */
     public int getNumber(String monthName) {
-        return (Integer)null;
+        int ordinal = (Integer) null;
+        for (Map.Entry<Integer, String> item : monthMap.entrySet()) {
+            if (item.getValue().equals(monthName))
+                ordinal = item.getKey();
+        }
+        return ordinal;
     }
 
-    /**
-     * @param monthNumber
-     * @return true if the monthNumber is in the keySet
-     */
-    public Boolean isValidNumber(Integer monthNumber) {
-        return null;
-    }
+        /**
+         * @param monthNumber
+         * @return true if the monthNumber is in the keySet
+         */
+        public Boolean isValidNumber (Integer monthNumber){
+            return monthMap.containsKey(monthNumber);
+        }
 
-    /**
-     * @param monthName
-     * @return true if the monthName is in the valueSet
-     */
-    public Boolean isValidMonth(String monthName) {
-        return null;
-    }
+        /**
+         * @param monthName
+         * @return true if the monthName is in the valueSet
+         */
+        public Boolean isValidMonth (String monthName){
+            return monthMap.containsValue(monthName);
+        }
 
-    /**
-     * @return number of entries in this mapping
-     */
-    public Integer size() {
-        return -1;
-    }
+        /**
+         * @return number of entries in this mapping
+         */
+        public Integer size () {
+            return monthMap.size();
+        }
 
-    /**
-     * @param monthNumber - number of month in year
-     * @param monthName - name of month
-     */
-    public void update(Integer monthNumber, String monthName) {
-
+        /**
+         * @param monthNumber - number of month in year
+         * @param monthName   - name of month
+         */
+        public void update (Integer monthNumber, String monthName){
+            monthMap.put(monthNumber, monthName);
+        }
     }
-}
