@@ -1,5 +1,8 @@
 package rocks.zipcode.assessment2.collections;
 
+import java.util.Set;
+import java.util.TreeMap;
+
 /**
  * Use a map to solve
  */
@@ -8,8 +11,14 @@ public class MonthConversion {
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
      * @param monthName - name of month
      */
-    public void add(Integer monthNumber, String monthName) {
+    private TreeMap<Integer,String> map;
 
+    public MonthConversion() {
+        this.map = new TreeMap<Integer,String>();
+    }
+
+    public void add(Integer monthNumber, String monthName) {
+        this.map.put(monthNumber,monthName);
     }
 
     /**
@@ -17,15 +26,24 @@ public class MonthConversion {
      * @return the name of the respective month
      */
     public String getName(Integer monthNumber) {
-        throw new NullPointerException();
+        if (map.keySet().contains(monthNumber)) {
+            return map.get(monthNumber);
+        } else {
+            return null;
+        }
     }
 
     /**
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
-        return (Integer)null;
+    public Integer getNumber(String monthName) {
+        for (int key : map.keySet()) {
+            if (map.get(key).equals(monthName)) {
+                return key;
+            }
+        }
+        return null;
     }
 
     /**
@@ -33,7 +51,7 @@ public class MonthConversion {
      * @return true if the monthNumber is in the keySet
      */
     public Boolean isValidNumber(Integer monthNumber) {
-        return null;
+        return map.keySet().contains(monthNumber);
     }
 
     /**
@@ -41,14 +59,15 @@ public class MonthConversion {
      * @return true if the monthName is in the valueSet
      */
     public Boolean isValidMonth(String monthName) {
-        return null;
+
+        return map.containsValue(monthName);
     }
 
     /**
      * @return number of entries in this mapping
      */
     public Integer size() {
-        return -1;
+        return map.keySet().size();
     }
 
     /**
@@ -56,6 +75,6 @@ public class MonthConversion {
      * @param monthName - name of month
      */
     public void update(Integer monthNumber, String monthName) {
-
+        map.put(monthNumber,monthName);
     }
 }
