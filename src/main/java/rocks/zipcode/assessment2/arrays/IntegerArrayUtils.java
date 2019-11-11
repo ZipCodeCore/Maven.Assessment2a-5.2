@@ -3,6 +3,7 @@ package rocks.zipcode.assessment2.arrays;
 import org.omg.PortableInterceptor.INACTIVE;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -15,14 +16,11 @@ public class IntegerArrayUtils {
      * @return - identical array with one additional element of `valueToBeAdded` at the end of the array
      */
     public static Integer[] add(Integer[] integerArray, Integer valueToBeAdded) {
-        List<Integer> list = new ArrayList<>();
-        {
-            list.add(valueToBeAdded,list.size());}
-            System.out.println(list);
-            return list.toArray(new Integer[0]);
-        }
+        List<Integer> arrlist = new ArrayList<>(Arrays.asList(integerArray));
+        arrlist.add(valueToBeAdded);
 
-
+        return integerArray;
+    }
     /**
      * @param integerArray - array to be manipulated
      * @param indexToInsertAt - index of the element to be inserted at

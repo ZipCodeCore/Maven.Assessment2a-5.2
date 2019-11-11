@@ -1,5 +1,4 @@
 package rocks.zipcode.assessment2.fundamentals;
-
 /**
  * @author leon on 28/11/2018.
  */
@@ -36,7 +35,14 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+
+        for (int i = 0; i <string.length(); i++) {
+            Character index = string.trim().charAt(i);
+            if ((!(index >= 'a' && index <= 'z')) && (!(index >= 'A' && index <= 'Z'))) ;
+            i++;
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -44,7 +50,13 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+        for (int i = 0; i <string.length(); i++) {
+            Character index = string.trim().charAt(i);
+            if ((!(index >= '0' && index <= '9')));
+            i++;
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -52,6 +64,6 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return null;
+        return (!isAlphaString(string) && isNumericString(string));
     }
 }
