@@ -14,10 +14,12 @@ public class Account {
     }
 
     public double balance() {
+
         return 0.0;
     }
 
     public boolean closeAccount() {
+
         return false;
     }
 
