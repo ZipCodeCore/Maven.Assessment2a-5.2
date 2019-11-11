@@ -33,7 +33,20 @@ public class StringArrayUtils {
      * @param startingIndex - starting index of array to be spliced
      * @return an array all elements between after `startingIndex`
      */
-    public static String[] getEndingArray(String[] arrayToBeSpliced, int startingIndex) {
-        return null;
+    public static String[] getEndingArray(String[] arrayToBeSpliced, int startingIndex) throws IndexOutOfBoundsException, IllegalArgumentException{
+        if(startingIndex < 0){
+            throw new IndexOutOfBoundsException();
+        }
+        if(startingIndex > arrayToBeSpliced.length){
+            throw new IllegalArgumentException();
+        }
+
+        String[] splicedArray = new String[arrayToBeSpliced.length - startingIndex];
+        Integer startingLocation = 0;
+        for(int i = startingIndex; i < arrayToBeSpliced.length; i++){
+            splicedArray[startingLocation] = arrayToBeSpliced[i];
+            startingLocation++;
+        }
+        return splicedArray;
     }
 }

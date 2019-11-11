@@ -11,10 +11,18 @@ public class MonthConversion {
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
      * @param monthName - name of month
      */
+
+    Integer monthNumber;
+    String month;
     TreeMap<Integer, String> calendar;
 
+    public MonthConversion(){
+        this.calendar = calendar;
+    }
+
+
     public void add(Integer monthNumber, String monthName) {
-        calendar.put(monthNumber,monthName);
+        this.calendar.put(monthNumber,monthName);
 
     }
 
