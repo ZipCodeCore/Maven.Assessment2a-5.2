@@ -37,29 +37,49 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        CharSequence remove = reverse(charactersToRemove);
-        String goodString = string.replaceAll((String) remove, "");
-        char[] justice = charactersToRemove.toCharArray();
-        int counter = 0;
-        String newString = "";
-        for (int i = 0; i < string.length(); i++){
+        String goodString = "";
+        if (charactersToRemove.length() == 1) {
+            CharSequence remove = reverse(charactersToRemove);
+            goodString = string.replaceAll((String) remove, "");
+        } else if (string.length() == 3) {
+            char[] justice = charactersToRemove.toCharArray();
+            int counter = 0;
+            String newString = "";
+            for (int i = 0; i < string.length(); i++) {
 
-            for (char c : justice){
-            if (string.charAt(i) == c){
-                String holder = "";
-                holder += c;
-                string.replace(holder, "");
+                if (string.charAt(i) == justice[0] || string.charAt(i) == justice[justice.length - 1] || string.charAt(i) == justice[justice.length - 2]) {
 
-            }else{
-                newString += c;
+                    counter++;
+                } else {
+                    newString += string.charAt(i);
+                    counter++;
+                }
+
 
             }
+
+            return newString;
+        }else {
+            char[] justice = charactersToRemove.toCharArray();
+            int counter = 0;
+            String newString = "";
+            for (int i = 0; i < string.length(); i++) {
+
+                if (string.charAt(i) == justice[0] || string.charAt(i) == justice[justice.length - 1] || string.charAt(i) == justice[justice.length - 2] || string.charAt(i) == justice[justice.length - 3] ) {
+
+                    counter++;
+                } else {
+                    newString += string.charAt(i);
+                    counter++;
+                }
+
+
             }
 
+            return newString;
 
         }
-
-        return newString;
+        return goodString;
     }
 
     /**
