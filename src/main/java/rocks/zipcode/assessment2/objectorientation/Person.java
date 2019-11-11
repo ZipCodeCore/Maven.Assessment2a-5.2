@@ -50,7 +50,7 @@ public class Person {
         this.residence = address;
     }
 
-    @Override
+    //@Override
     public boolean equals(Person o) {
         boolean ans = this.id == o.getId() &&
                 this.name == o.getName() &&

@@ -85,4 +85,15 @@ public class Address {
 
         return ans;
     }
+
+    @Override
+    public String toString(){
+        return "Address{addressLine1='" + this.addressLine1  +
+                "', addressLine2='" + this.addressLine2 +
+                "', city='" + this.city +
+                "', state='" + this.state +
+                "', zipcode='" + this.zipcOde +
+                "'}";
+
+    }
 }
