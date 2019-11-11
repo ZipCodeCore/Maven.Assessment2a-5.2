@@ -56,6 +56,8 @@ public class PredicateUtilities {
             return true;
              if(!(Character.isAlphabetic(string.charAt(0))))
             return false;
+            else if(!(Character.isUnicodeIdentifierStart(string.charAt(0))))
+                 return true;
         else
             return false;
     }

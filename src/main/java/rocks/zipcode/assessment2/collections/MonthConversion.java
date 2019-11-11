@@ -57,7 +57,7 @@ public class MonthConversion {
      * @return true if the monthName is in the valueSet
      */
     public Boolean isValidMonth(String monthName) {
-        if(monthHashMap.containsKey(monthName))
+        if(monthHashMap.containsValue(monthName))
             return true;
         else
             return false;
