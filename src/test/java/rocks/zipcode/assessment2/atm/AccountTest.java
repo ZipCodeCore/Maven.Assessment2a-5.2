@@ -1,4 +1,4 @@
-package rocks.zipcode.assessment2.atm;
+/** package rocks.zipcode.assessment2.atm;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -82,3 +82,4 @@ public class AccountTest {
 
 
 }
+*/
