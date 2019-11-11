@@ -15,8 +15,6 @@ public class MonthConversion {
      * @param monthName - name of month
      */
 
-    Integer monthNumber;
-    String month;
     TreeMap<Integer, String> calendar;
 
     public MonthConversion(){
@@ -34,7 +32,6 @@ public class MonthConversion {
      * @return the name of the respective month
      */
     public String getName(Integer monthNumber) throws NullPointerException{
-
         return calendar.get(monthNumber);
     }
 

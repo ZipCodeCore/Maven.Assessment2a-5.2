@@ -1,7 +1,6 @@
 package rocks.zipcode.assessment2.collections;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Use a map to keep track of inventory in a store
@@ -10,9 +9,9 @@ public class Inventory {
     /**
      * @param strings list of strings to add / remove / fetch from
      */
-    List<String> strings;
+    ArrayList<String> strings;
 
-    public Inventory(List<String> strings) {
+    public Inventory(ArrayList<String> strings) {
         this.strings = strings;
     }
 
@@ -42,6 +41,12 @@ public class Inventory {
      * @return - return the number of items
      */
     public Integer getItemQuantity(String item) {
-        return null;
+        Integer counter = 0;
+        for(int i = 0; i < strings.size(); i++ ){
+            if(strings.get(i).equals(item)){
+                counter++;
+            }
+        }
+        return counter;
     }
 }
