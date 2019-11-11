@@ -75,13 +75,7 @@ public class Address {
 
     @Override
     public boolean equals(Object o) {
-        Boolean same = true;
-        if (!this.addressLine1.equals(((Address) o).getAddressLine1())
-                || !this.addressLine2.equals(((Address) o).getAddressLine2())
-                || !this.city.equals(((Address) o).getCity())
-                || !this.state.equals(((Address) o).getState())
-                || !this.zipcode.equals(((Address) o).getZipcode())) same = false;
-        return same;
+        return (this.toString().equals(((Address) o).toString()));
     }
 
     @Override
