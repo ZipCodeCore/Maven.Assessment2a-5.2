@@ -75,6 +75,6 @@ public class MonthConversion {
      * @param monthName - name of month
      */
     public void update(Integer monthNumber, String monthName) {
-
+        monthList.replace(monthNumber,monthName);
     }
 }
