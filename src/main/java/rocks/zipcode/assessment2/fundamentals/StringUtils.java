@@ -10,7 +10,7 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return null;
+        return stringToBePadded.format("%" + amountOfPadding + "s", stringToBePadded);
     }
 
     /**
@@ -19,7 +19,7 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        return null;
+        return stringToBePadded.format("%-" + amountOfPadding + "s", stringToBePadded);
     }
 
     /**
@@ -36,7 +36,7 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+        return string.matches("[a-zA-Z]+");
     }
 
     /**
@@ -44,14 +44,22 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+        try {
+            Long.parseLong(string);
+            return true;
+        } catch (NumberFormatException ex) {
+            return false;
+        }
     }
+
+
 
     /**
      * @param string - string to be evaluated
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
+
         return null;
     }
 }
