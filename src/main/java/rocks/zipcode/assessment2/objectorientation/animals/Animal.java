@@ -10,10 +10,12 @@ import rocks.zipcode.assessment2.objectorientation.Person;
 public class Animal {
     private Long id;
     private Person owner;
+    private Address address;
 
     public Animal() {
         this.id = null;
         this.owner = new Person();
+        this.address = this.owner.getAddress();
     }
 
     /**

@@ -59,9 +59,7 @@ public class Person {
             return false;
         }
         Person person = (Person) o;
-        return id == person.id &&
-                name.equals(person.name) &&
-                address.equals(person.getAddress());
+        return name.equals(person.name);
     }
 
     @Override
