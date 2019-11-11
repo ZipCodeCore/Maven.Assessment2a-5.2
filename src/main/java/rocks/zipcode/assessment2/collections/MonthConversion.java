@@ -42,13 +42,13 @@ public class MonthConversion {
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
+    public Integer getNumber(String monthName) {
         for(Integer ordial : calendar.keySet()) {
             if (calendar.get(ordial).equals(monthName)) {
                 return ordial;
             }
         }
-        return 0;
+        return null;
     }
 
     /**
@@ -79,6 +79,6 @@ public class MonthConversion {
      * @param monthName - name of month
      */
     public void update(Integer monthNumber, String monthName) {
-
+            calendar.replace(5,"April","May");
     }
 }

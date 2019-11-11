@@ -9,12 +9,8 @@ package rocks.zipcode.assessment2.generics;
  * Shelter<Dog> dogHouse = new Shelter<Dog>();
  */
 public class Shelter<T> {
-    private T element;
-    public T get(){return element;}
-    public void put(T item){element = item;}
 
     public Shelter() {
-
 
         throw new NullPointerException();
     }
