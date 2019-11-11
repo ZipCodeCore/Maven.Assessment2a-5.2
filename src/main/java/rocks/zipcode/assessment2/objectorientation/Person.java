@@ -7,9 +7,7 @@ package rocks.zipcode.assessment2.objectorientation;
 public class Person {
 
     Long id = Long.MIN_VALUE;
-    ;
     String name = "";
-    //Object Address;
     Address address = new Address();
 
     /**
