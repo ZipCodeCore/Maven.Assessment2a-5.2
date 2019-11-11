@@ -91,11 +91,10 @@ public class StringUtils {
     public static Boolean isSpecialCharacterString(String string) {
 
         for(int index = 0; index < string.length(); index++) {
-            if (!Character.isDigit(string.charAt(index)) && !Character.isLetter(string.charAt(index))
-                    && !Character.isWhitespace(string.charAt(index)))
-                return true;
+            if (Character.isDigit(string.charAt(index)) ||Character.isLetter(string.charAt(index)))
+                return false;
         }
 
-        return false;
+        return true;
     }
 }
