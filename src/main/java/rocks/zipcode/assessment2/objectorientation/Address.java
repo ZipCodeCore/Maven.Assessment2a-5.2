@@ -11,6 +11,11 @@ public class Address{
     private String zipcode = "";
 
     public Address() {
+        this.line1 = "";
+        this.line2 = "";
+        this.city = "";
+        this.state = "";
+        this.zipcode = "";
     }
 
     /**
@@ -20,12 +25,12 @@ public class Address{
      * @param state - state of city
      * @param zipcode - zipcode of region
      */
-    public Address(String addressLine1, String addressLine2, String city, String state, String zipcode) {
+    public Address(String addressLine1, String addressLine2, String city, String state, String zipcode ) {
         this.line1 = addressLine1;
         this.line2 = addressLine2;
         this.city = city;
         this.state = state;
-        this.zipcode = zipcode;
+        this.zipcode = zipcode ;
     }
 
     public String getAddressLine1() {

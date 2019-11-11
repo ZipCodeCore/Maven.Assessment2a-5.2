@@ -1,6 +1,7 @@
 package rocks.zipcode.assessment2.collections;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Use a map to solve
@@ -10,10 +11,10 @@ public class MonthConversion {
     private Integer monthNumber;
     private String monthName;
 
-//    /**
-//     * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
-//     * @param monthName - name of month
-//     */
+    /**
+     * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
+     * @param monthName - name of month
+     */
 
     public MonthConversion()    {
         monthConversionMap = new HashMap<Integer, String>();
@@ -23,15 +24,17 @@ public class MonthConversion {
 
 
     public void add(Integer monthNumber, String monthName) {
+        this.monthNumber = monthNumber;
+        this.monthName = monthName;
 
         monthConversionMap.put(monthNumber, monthName);
 
     }
 
-
-//     * @param monthNumber - ordinal of month in the year
-//     * @return the name of the respective month
-//     */
+    /**
+     * @param monthNumber - ordinal of month in the year
+     * @return the name of the respective month
+     */
     public String getName(Integer monthNumber) {
         if (monthNumber < 1 || monthNumber > 12) {
             throw new NullPointerException("Invalid Number");
@@ -45,7 +48,17 @@ public class MonthConversion {
      * @return - the ordinal of the month in the year
      */
     public int getNumber(String monthName) {
-        return (Integer)null;
+        Object key = null;
+        for(Map.Entry entry: monthConversionMap.entrySet()) {
+            if(monthName.equals(entry.getValue())) {
+                key = entry.getKey();
+            }   else    {
+                key = null;
+                break;
+            }
+        }
+
+        return (Integer)key;
     }
 
     /**
@@ -68,7 +81,7 @@ public class MonthConversion {
      * @return number of entries in this mapping
      */
     public Integer size() {
-        return -1;
+        return monthConversionMap.size();
     }
 
     /**
