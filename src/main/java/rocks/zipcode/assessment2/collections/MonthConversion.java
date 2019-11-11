@@ -1,5 +1,8 @@
 package rocks.zipcode.assessment2.collections;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Use a map to solve
  */
@@ -9,8 +12,9 @@ public class MonthConversion {
      * @param monthName - name of month
      */
     public void add(Integer monthNumber, String monthName) {
-
-    }
+        HashMap<Integer, String> months = new HashMap<>();
+        months.put(monthNumber, monthName);
+        }
 
     /**
      * @param monthNumber - ordinal of month in the year
