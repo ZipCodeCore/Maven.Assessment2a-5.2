@@ -64,10 +64,7 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        Boolean checker = string.matches("[a-zA-Z0-9\\s]*");
-        if(checker)
-            return false;
-        else
-            return true;
+        boolean checker = string.matches("^[a-zA-Z0-9\\s ]*$");
+        return !checker;
     }
 }
