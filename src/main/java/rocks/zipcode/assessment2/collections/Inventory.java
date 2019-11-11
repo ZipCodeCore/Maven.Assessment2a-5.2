@@ -9,7 +9,7 @@ import java.util.Map;
  * Use a map to keep track of inventory in a store
  */
 public class Inventory {
-    Map<String, Integer> inv;
+    private Map<String, Integer> inv;
     private List<String> strings;
 
     /**
@@ -17,6 +17,10 @@ public class Inventory {
      */
     public Inventory(List<String> strings) {
         this.strings = strings;
+        this.inv = new HashMap<>(); 
+        for (int i = 0; i <strings.size() ; i++) {
+            addItemToInventory(strings.get(i));
+        }
     }
 
     /**
@@ -52,6 +56,11 @@ public class Inventory {
      * @return - return the number of items
      */
     public Integer getItemQuantity(String item) {
+//        if(inv.containsKey(item)){
+//            return inv.get(item);
+//        }else return 0;
+
         return inv.getOrDefault(item, 0);
+
     }
 }
