@@ -1,5 +1,9 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class BasicStringUtils {
     /**
      * @param string1 - Base string to be added to
@@ -41,7 +45,9 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        return null;
+
+        return string.replaceAll(charactersToRemove,"");
+
     }
 
     /**
@@ -50,6 +56,8 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        String result = removeCharacters(string,charactersToRemove);
+        result = reverse(result);
+        return result;
     }
 }
