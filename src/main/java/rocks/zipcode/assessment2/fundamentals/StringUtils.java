@@ -56,6 +56,7 @@ public class StringUtils {
         char [] chars = string.toCharArray();
         for (char value : chars){
             if (Character.isDigit(value)){
+                result = false;
                 break;
             }
              result = Character.isLetter(value);
@@ -86,7 +87,17 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
+        boolean result = false;
+        char [] chars = string.toCharArray();
 
-        return (!isAlphaString(string) && !isNumericString(string));
+        for (char value : chars){
+            if (Character.isWhitespace(value)){
+                result =false;
+                break;
+            }
+            result = (!isAlphaString(string) && !isNumericString(string));
+        }
+
+        return result;
     }
 }
