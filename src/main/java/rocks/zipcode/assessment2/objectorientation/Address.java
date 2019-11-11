@@ -1,6 +1,7 @@
 package rocks.zipcode.assessment2.objectorientation;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * @author leon on 28/11/2018.
@@ -80,8 +81,11 @@ public class Address {
         add[4] = zipcode;
        return "Address{addressLine1=" +"'" +getAddressLine1() + "',"+ " " + "addressLine2=" + "'" +getAddressLine2() +"'," + " " + "city="+"'" + getCity() + "'," + " " +"state=" + "'" + getState() + "'," + " " +"zipcode=" + "'" + getZipcode() + "'" + "}";
     }
+    //Correct this
     @Override
     public boolean equals(Object o) {
-        return (Boolean)null;
+       if(  Comparator.comparing(Address::getAddressLine1).thenComparing(Address::getAddressLine2).thenComparing(Address::getCity).thenComparing(Address:: getState).thenComparing(Address::getZipcode).compare((Address) o,this)  == 0){return true;}
+    return false;
     }
+
 }
