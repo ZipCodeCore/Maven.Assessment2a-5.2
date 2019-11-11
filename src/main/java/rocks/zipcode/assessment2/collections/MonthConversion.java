@@ -1,12 +1,15 @@
 package rocks.zipcode.assessment2.collections;
 
 
+import java.util.ArrayList;
+import java.util.Set;
 import java.util.TreeMap;
 
 /**
  * Use a map to solve
  */
 public class MonthConversion {
+
     /**
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
      * @param monthName - name of month
@@ -17,7 +20,7 @@ public class MonthConversion {
     TreeMap<Integer, String> calendar;
 
     public MonthConversion(){
-        this.calendar = calendar;
+        this.calendar = new TreeMap<>();
     }
 
 
@@ -30,8 +33,9 @@ public class MonthConversion {
      * @param monthNumber - ordinal of month in the year
      * @return the name of the respective month
      */
-    public String getName(Integer monthNumber) {
-        throw new NullPointerException();
+    public String getName(Integer monthNumber) throws NullPointerException{
+
+        return calendar.get(monthNumber);
     }
 
     /**
@@ -39,7 +43,12 @@ public class MonthConversion {
      * @return - the ordinal of the month in the year
      */
     public int getNumber(String monthName) {
-        return (Integer)null;
+        for(Integer ordial : calendar.keySet()){
+            if(calendar.get(ordial).equals(monthName)){
+                return ordial;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -47,7 +56,7 @@ public class MonthConversion {
      * @return true if the monthNumber is in the keySet
      */
     public Boolean isValidNumber(Integer monthNumber) {
-        return null;
+        return calendar.containsKey(monthNumber);
     }
 
     /**
@@ -55,14 +64,14 @@ public class MonthConversion {
      * @return true if the monthName is in the valueSet
      */
     public Boolean isValidMonth(String monthName) {
-        return null;
+        return calendar.containsValue(monthName);
     }
 
     /**
      * @return number of entries in this mapping
      */
     public Integer size() {
-        return -1;
+        return calendar.size();
     }
 
     /**
