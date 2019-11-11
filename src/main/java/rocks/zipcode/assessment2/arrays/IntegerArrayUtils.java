@@ -10,7 +10,14 @@ public class IntegerArrayUtils {
      * @return - identical array with one additional element of `valueToBeAdded` at the end of the array
      */
     public static Integer[] add(Integer[] integerArray, Integer valueToBeAdded) {
-        return null;
+        Integer[] result = new Integer[integerArray.length + 1];
+        for(int i = 0; i < result.length; i++){
+            if(i == result.length-1)
+                result[i] = valueToBeAdded;
+            else
+                result[i] = integerArray[i];
+        }
+        return result;
     }
 
     /**
@@ -20,7 +27,11 @@ public class IntegerArrayUtils {
      * @return `integerArray` with `valueToBeInserted` at index number `indexToInsertAt`
      */
     public static Integer[] replace(Integer[] integerArray, int indexToInsertAt, Integer valueToBeInserted) {
-        return null;
+        for(int i = 0; i < integerArray.length; i++){
+            if(i == indexToInsertAt)
+                integerArray[i] = valueToBeInserted;
+        }
+        return integerArray;
     }
 
     /**
@@ -29,7 +40,13 @@ public class IntegerArrayUtils {
      * @return element located at `indexToFetch`
      */
     public static Integer get(Integer[] integerArray, Integer indexToFetch) {
-        return null;
+        Integer result = 0;
+
+        for(int i = 0; i < integerArray.length; i++){
+            if(i == indexToFetch)
+                result = integerArray[i];
+        }
+        return result;
     }
 
     /**
@@ -37,7 +54,13 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1 and odd-values decremented by 1
      */
     public static Integer[] incrementEvenDecrementOdd(Integer[] integerArray) {
-        return null;
+        for(int i  = 0; i < integerArray.length; i++){
+            if(integerArray[i] % 2 == 0)
+                integerArray[i]++;
+            else
+                integerArray[i]--;
+        }
+        return integerArray;
     }
 
     /**
@@ -45,7 +68,11 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1
      */
     public static Integer[] incrementEven(Integer[] integerArray) {
-        return null;
+        for(int i  = 0; i < integerArray.length; i++){
+            if(integerArray[i] % 2 == 0)
+                integerArray[i]++;
+        }
+        return integerArray;
     }
 
     /**
@@ -53,6 +80,10 @@ public class IntegerArrayUtils {
      * @return identical array with odd-values decremented by 1
      */
     public static Integer[] decrementOdd(Integer[] input) {
-        return null;
+        for(int i  = 0; i < input.length; i++){
+            if(input[i] % 2 != 0)
+                input[i]--;
+        }
+        return input;
     }
 }
