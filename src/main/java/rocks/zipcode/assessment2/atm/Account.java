@@ -1,33 +1,53 @@
 package rocks.zipcode.assessment2.atm;
 
+import java.security.InvalidParameterException;
+
 public class Account {
 
-    // this is only boiler plate. add your group's code here.
+    protected Double balance;
 
-    // ********
-    //
-    // See why you needed to get ATM finished this weekend??
-    //
-    // ********
-    
-    public Account(double v) {
+    public Account(Double balance){
+        this.balance = balance;
     }
 
-    public double balance() {
-        return 0.0;
+    public Double balance(){
+        return this.balance;
     }
 
-    public boolean closeAccount() {
-        return false;
+
+    public Double withdraw(Double amount) {
+        if (amount < 0) {
+            throw new InvalidParameterException();
+        }
+        if(this.balance >= amount) {
+            this.balance = balance - amount;
+            return balance;
+        }
+        return balance;
     }
 
-    public void deposit(double v) {
+    public Double deposit(Double amount) {
+        if (amount < 0) {
+            throw new InvalidParameterException();
+        }
+        this.balance = balance + amount;
+        return balance;
     }
 
-    public Double withdraw(double v) {
-        return 0.0;
+    public Double transfer(Account destinationAccount, Double amount) {
+        if (amount < 0) {
+            throw new InvalidParameterException();
+        }
+        if(this.balance >= amount) {
+            this.withdraw(amount);
+            destinationAccount.deposit(amount);
+        }
+        return this.balance;
     }
 
-    public void transfer(Account b, double v) {
+    public boolean closeAccount(){
+        if(this.balance > 0){
+            return false;
+        } return true;
     }
 }
