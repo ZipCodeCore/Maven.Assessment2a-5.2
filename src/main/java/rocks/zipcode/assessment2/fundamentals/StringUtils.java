@@ -1,5 +1,9 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+import javax.print.attribute.standard.PresentationDirection;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author leon on 28/11/2018.
  */
@@ -35,7 +39,12 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+        String result = "";
+
+        for (int i = 0; i < numberOfTimeToRepeat; i++){
+            result = result.concat(stringToBeRepeated);
+        }
+        return result;
     }
 
     /**
