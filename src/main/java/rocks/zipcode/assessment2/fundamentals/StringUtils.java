@@ -38,34 +38,37 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        boolean containsLetters = false;
-        if (string != null && !string.isEmpty()) {
-            for (char c : string.toCharArray()) {
-                if (containsLetters = Character.isLetter(c)) {
-                    break;
-                }
-            }
+        if (string.matches("[a-zA-Z]")) {
+            return true;
+        } else {
+            return false;
         }
-        return containsLetters;
     }
 
-    /**
-     * @param string - string to be evaluated
-     * @return - true if string only contains numeric characters
-     */
+            /**
+             * @param string - string to be evaluated
+             * @return - true if string only contains numeric characters
+             */
     public static Boolean isNumericString(String string) {
-        boolean containsNumbers = false;
-
-        if (string != null && !string.isEmpty()) {
-            for (char c : string.toCharArray()) {
-                if (containsNumbers = Character.isDigit(c)) {
-                    break;
-                }
-            }
+        boolean numeric = true;
+        if(string.matches("-?\\d+(\\.\\d+)?")) {
+            return true;
+        }else {
+            return false;
         }
-
-        return containsNumbers;
     }
+//        boolean containsNumbers = false;
+//
+//        if (string != null && !string.isEmpty()) {
+//            for (char c : string.toCharArray()) {
+//                if (containsNumbers = Character.isDigit(c)) {
+//                    break;
+//                }
+//            }
+//        }
+//
+//        return containsNumbers;
+//    }
     //https://stackoverflow.com/questions/18590901/check-if-a-string-contains-numbers-java
 
     /**
@@ -73,16 +76,12 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        boolean containsSC = false;
-        if (string != null && !string.isEmpty()) {
-            for (char c : string.toCharArray()) {
-                if (containsSC = Character.isLetter(c)) {
-                    break;
-                }
-            }
+        String specialCharacters = "[" + "-/@#!*$%^&.'_+={}()"+ "]+" ;
+
+        if ( string.matches(specialCharacters)) {
+            return true;
+        }else{
+            return false;
         }
-
-
-        return containsSC;
     }
 }
