@@ -47,7 +47,7 @@ public class IntegerArrayUtils {
         List<Integer> list = new ArrayList<>();
         for (Integer x : integerArray) {
             if (x.equals(indexToFetch)) {
-                Integer got = list.get(x);
+                list.get(x);
             }
         }
 
@@ -70,7 +70,7 @@ public class IntegerArrayUtils {
 
         for(int i = 0; i < integerArray.length; i++)
             if(integerArray[i] % 2 ==0)
-                integerArray[i] = (i+1);
+                integerArray[i] = (i++);
 
         return integerArray;
     }

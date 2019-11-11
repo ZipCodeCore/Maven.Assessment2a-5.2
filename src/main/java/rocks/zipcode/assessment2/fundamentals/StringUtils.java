@@ -42,12 +42,14 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-
+        String tester = string.trim();
         for (int i = 0; i <string.length(); i++) {
-            Character index = string.trim().charAt(i);
-            if ((!(index >= 'a' && index <= 'z')) && (!(index >= 'A' && index <= 'Z'))) ;
-            i++;
-            return false;
+            Character index = tester.charAt(i);
+            if ((!(index >= 'a' && index <= 'z')) && (!(index >= 'A' && index <= 'Z'))) {
+                i++;
+                return false;
+            }
+
         }
         return true;
     }
@@ -71,6 +73,6 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return (!isAlphaString(string) && isNumericString(string));
+        return (isAlphaString(string) && isNumericString(string));
     }
 }
