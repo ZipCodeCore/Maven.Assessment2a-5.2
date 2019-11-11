@@ -17,7 +17,7 @@ public class IntegerArrayUtils {
         Integer arraylength =  integerArray.length;
         Integer[] newArray = new Integer[arraylength+1];
         int i=0;
-        for (Integer intValue : newArray)
+        for (Integer intValue : integerArray)
         {
 
             if (i> arraylength+1)
@@ -97,12 +97,15 @@ public class IntegerArrayUtils {
         Integer arraylength =  integerArray.length;
         Integer[] newArray = new Integer[arraylength];
 
-        int i=0;
-        for (Integer intValue: integerArray) {
-            if(intValue%2 == 0)
+        for (int i=0; i<arraylength; i++) {
+            if(integerArray[i]%2 == 0)
             {
-                newArray[i] = intValue+1;
-                i++;
+                newArray[i] = integerArray[i]+1;
+
+            }
+            else
+            {
+                newArray[i] = integerArray[i];
             }
 
         }
@@ -125,6 +128,11 @@ public class IntegerArrayUtils {
 
             {
                 newArray[i] = intValue-1;
+                i++;
+            }
+            else
+            {
+                newArray[i] = intValue;
                 i++;
             }
         }
