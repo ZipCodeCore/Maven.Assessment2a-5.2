@@ -10,7 +10,15 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return null;
+
+        StringBuilder str = new StringBuilder();
+        String result = "";
+
+        for(int i = 0; i < amountOfPadding; i++){
+             result =  " "+"  "+ stringToBePadded;
+
+        }
+        return result;
     }
 
     /**
