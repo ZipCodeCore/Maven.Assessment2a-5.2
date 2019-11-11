@@ -28,8 +28,11 @@ public class StringArrayUtils {
      * @param startingIndex - starting index of array to be spliced
      * @return an array all elements between after `startingIndex`
      */
-    public static String[] getEndingArray(String[] arrayToBeSpliced, int startingIndex)throws IllegalArgumentException {
+    public static String[] getEndingArray(String[] arrayToBeSpliced, int startingIndex)throws IndexOutOfBoundsException, IllegalArgumentException{
         if(startingIndex<0) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (startingIndex>arrayToBeSpliced.length){
             throw new IllegalArgumentException();
         }
         String[]spliced = new String[arrayToBeSpliced.length-startingIndex];

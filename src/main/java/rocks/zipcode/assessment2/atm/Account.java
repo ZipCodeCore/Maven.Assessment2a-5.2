@@ -1,14 +1,18 @@
 package rocks.zipcode.assessment2.atm;
 
+import java.util.Random;
+
 public class Account {
 
-    // this is only boiler plate. add your group's code here.
 
-    // ********
-    //
-    // See why you needed to get ATM finished this weekend??
-    //
-    // ********
+    private Double balance;
+    private Integer ownerID;
+    private Integer acctNum;
+    public enum Status {
+        OPEN, CLOSED, OFAC
+    }
+    private Status acctStatus;
+    Random random = new Random();
     
     public Account(double v) {
     }
