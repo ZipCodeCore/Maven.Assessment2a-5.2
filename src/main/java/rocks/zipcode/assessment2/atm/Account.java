@@ -36,9 +36,11 @@ public class Account {
     }
 
     public Double withdraw(double v) {
-        this.accountBalance -= v;
+        if (v > 0 && v <= accountBalance) {
+            accountBalance -= v;
+        }
+            return this.accountBalance;
 
-        return this.accountBalance;
     }
 
     public void transfer(Account b, double v) {
