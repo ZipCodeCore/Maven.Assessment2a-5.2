@@ -7,7 +7,7 @@ public class BasicStringUtils {
      * @return concatenation of `string1` and `string2`
      */
     public static String concatentate(String string1, String string2) {
-        return null;
+        return string1 + string2;
     }
 
     /**
@@ -15,7 +15,12 @@ public class BasicStringUtils {
      * @return an identical string with characters in reverse order
      */
     public static String reverse(String string1) {
-        return null;
+        char[] arr = string1.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < string1.length(); i++) {
+            sb.append(arr[i]);
+        }
+        return sb.reverse().toString();
     }
 
     /**
@@ -24,7 +29,9 @@ public class BasicStringUtils {
      * @return concatenation of the reverse of `string1` and reverse of `string2`
      */
     public static String reverseThenConcatenate(String string1, String string2) {
-        return null;
+        String str1Rev = reverse(string1);
+        String str2Rev = reverse(string2);
+        return concatentate(str1Rev, str2Rev);
     }
 
     /**
@@ -32,8 +39,31 @@ public class BasicStringUtils {
      * @param charactersToRemove - Characters that should be removed from `string`
      * @return `string` with `charactersToRemove` removed
      */
+
+    static final int NUMBEROFCHARS = 256;
+
+    static int[] getCharCountArray(String str) {
+        int count[] = new int[NUMBEROFCHARS];
+        for (int i = 0; i < str.length(); i++) {
+            count[str.charAt(i)]++;
+        }
+        return count;
+    }
     public static String removeCharacters(String string, String charactersToRemove) {
-        return null;
+        int count[]  = getCharCountArray(charactersToRemove);
+        int inputIndex  = 0, resultIndex = 0;
+        char arr[] = string.toCharArray();
+
+        while (inputIndex != arr.length) {
+            char temp = arr[inputIndex];
+            if(count[temp] == 0) {
+                arr[resultIndex] = arr[inputIndex];
+                resultIndex ++;
+            }
+            inputIndex++;
+        }
+        string = new String(arr);
+        return string.substring(0, resultIndex);
     }
 
     /**
@@ -42,6 +72,8 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        String removed = removeCharacters(string, charactersToRemove);
+        String result = reverse(removed);
+        return result;
     }
 }
