@@ -30,10 +30,12 @@ public class Address {
     }
 
     public String getAddressLine1() {
+
         return addressLine1;
     }
 
     public void setAddressLine1(String addressLine1) {
+
         this.addressLine1 = addressLine1;
     }
 
@@ -43,6 +45,7 @@ public class Address {
     }
 
     public void setAddressLine2(String addressLine2) {
+
         this.addressLine2 = addressLine2;
     }
 
@@ -52,6 +55,7 @@ public class Address {
     }
 
     public void setCity(String city) {
+
         this.city = city;
     }
 
@@ -61,6 +65,7 @@ public class Address {
     }
 
     public void setState(String state) {
+
         this.state = state;
     }
 
@@ -70,12 +75,18 @@ public class Address {
     }
 
     public void setZipcode(String zipcode) {
+
         this.zipcode = zipcode;
     }
 
     @Override
     public boolean equals(Object o) {
-        return  (Boolean)null;
+        Address a = new Address();
+        Address b = new Address();
+        if (a == b){
+            return true;
+        }
+        return false;
     }
 
 //    @Override

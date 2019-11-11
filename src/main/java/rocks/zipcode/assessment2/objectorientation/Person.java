@@ -16,6 +16,7 @@ public class Person {
     public Person(Long id, String name, Address address) {
         this.id = id;
         this.name = name;
+        setAddress(address);
     }
 
     public Person() {
@@ -26,10 +27,12 @@ public class Person {
     }
 
     public void setId(Long id) {
+
         this.id = id;
     }
 
     public String getName() {
+
         return name;
     }
 
@@ -38,10 +41,12 @@ public class Person {
     }
 
     public Address getAddress() {
-        return null;
+
+        return personAddress;
     }
 
     public void setAddress(Address address) {
+        this.personAddress = address;
     }
 
     @Override
