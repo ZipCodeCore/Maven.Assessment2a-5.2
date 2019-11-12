@@ -14,9 +14,9 @@ public class Person {
     String name = "";
     Address personAddress = new Address();
     public Person(Long id, String name, Address address) {
-        this.id = id;
+        this.id = Long.MIN_VALUE;
         this.name = name;
-        setAddress(address);
+        this.personAddress = address;
     }
 
     public Person() {
@@ -46,6 +46,7 @@ public class Person {
     }
 
     public void setAddress(Address address) {
+
         this.personAddress = address;
     }
 

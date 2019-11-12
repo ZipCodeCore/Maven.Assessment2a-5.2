@@ -12,11 +12,18 @@ public class StringArrayUtils {
      * @param endingIndex      - ending index of array
      * @return an array with all elements between `startingIndex` and `endingIndex`
      */
-    public static String[] getSubArray(String[] arrayToBeSpliced, int startingIndex, int endingIndex) throws IndexOutOfBoundsException, IllegalArgumentException {
-//        String[] shortArr = new String[endingIndex - startingIndex-1];
-        ArrayList<String> subArr = new ArrayList<>();
+    public static String[] getSubArray(String[] arrayToBeSpliced, int startingIndex, int endingIndex) {
+        if (startingIndex < 0 ){throw new IllegalArgumentException();}
+        String[] shortArr = new String[endingIndex - startingIndex];
+        for (int i = 0 ; i < shortArr.length ; i++ ){
+            shortArr[i] = arrayToBeSpliced[startingIndex+i];
+            if (arrayToBeSpliced[startingIndex+i] == arrayToBeSpliced[endingIndex]){
+                break;
+            }
+        }
+        System.out.println(shortArr);
+        return shortArr;
 
-        return null;
     }
 
 
