@@ -40,18 +40,10 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-//        String result = "" ;
-//        for (int i = 0 ; i < string.length() ; i++){
-//            if (string.charAt(i) != charactersToRemove.charAt(i)){
-//                result += string.charAt(i);
-//            }
-//        }
-//        System.out.println(result);
-//        return result;
-        String result = "";
-        for (int i = 0 ; i < charactersToRemove.length() ; i ++){
-        result = string.replaceAll(String.valueOf(charactersToRemove.charAt(i)), "");
-        } return result;
+    for (char c : charactersToRemove.toCharArray()){
+       string = string.replace(Character.toString(c),"");
+
+        }return string;
     }
 
     /**
@@ -60,6 +52,6 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        return removeCharacters(reverse(string), charactersToRemove);
     }
 }
