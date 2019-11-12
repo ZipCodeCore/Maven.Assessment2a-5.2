@@ -15,6 +15,7 @@ public class Animal {
 
 
     public Animal() {
+        this.newOnwer = new Person();
     }
 
     /**
