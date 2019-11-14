@@ -99,7 +99,10 @@ public class Account {
     }
 
     public void transfer(Account b, double v) {
-        this.balance -= v;
+        if( v <= this.balance ){
+            b.deposit(v);
+            this.withdraw(v);
+        }
     }
 }
 

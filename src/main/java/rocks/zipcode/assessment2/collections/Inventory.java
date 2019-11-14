@@ -1,5 +1,6 @@
 package rocks.zipcode.assessment2.collections;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -9,16 +10,16 @@ import java.util.Map;
  * Use a map to keep track of inventory in a store
  */
 public class Inventory {
-    private List<String> strings;
-    private String item;
-    private Map<String, Integer> map;
+    private ArrayList<String> strings;
+    //private String item;
+    //private Map<String, Integer> map;
 
     /**
      * @param strings list of strings to add / remove / fetch from
      */
-    public Inventory(List<String> strings) {
-        this.strings = new ArrayList<> (strings);
-        this.map = new LinkedHashMap<>(0);
+    public Inventory(ArrayList<String> strings) {
+        this.strings = strings;
+        //this.map = new LinkedHashMap<>(0);
     }
 
     /**
@@ -26,7 +27,7 @@ public class Inventory {
 
      */
     public Inventory() {
-        this.map = new LinkedHashMap<>(0);
+        //this.map = new LinkedHashMap<>(0);
         this.strings = new ArrayList<>(0);
 
     }
@@ -35,22 +36,14 @@ public class Inventory {
      * @param item - increment the number of this item in stock by 1
      */
     public void addItemToInventory(String item) {
-//        for (String myItem : strings)
-        int preItemQuantity = getItemQuantity(item);
-        int postAddedQuantity = preItemQuantity + 1;
-        map.put(item, postAddedQuantity);
-//
-//                (map.get(item));
-//        this.strings.add(item);
-//        map.put(item, (ArrayList) strings);
+        this.strings.add(item);
     }
 
     /**
      * @param item - decrement the number of this item in stock by 1
      */
     public void removeItemFromInventory(String item) {
-
-        map.remove(item);
+        this.strings.remove(item);
     }
 
     /**
@@ -58,7 +51,12 @@ public class Inventory {
      * @return - return the number of items
      */
     public Integer getItemQuantity(String item) {
+        int counter = 0;
+        for (String myItem : strings)
+            if (myItem.equals(item)){
+                counter++;
+            }
 
-        return map.get(item);
+        return counter;
     }
 }

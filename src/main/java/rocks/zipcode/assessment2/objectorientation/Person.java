@@ -12,14 +12,14 @@ public class Person {
     private Address address;
 
     /**
-     * @param id - id of person
-     * @param name - name of person
+     * @param id      - id of person
+     * @param name    - name of person
      * @param address - address of person
      */
     public Person(Long id, String name, Address address) {
         this.id = id;
         this.name = name;
-        this. address = address;
+        this.address = address;
     }
 
     public Person() {
@@ -38,8 +38,7 @@ public class Person {
         this.id = id;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return this.name;
     }
 
@@ -57,22 +56,26 @@ public class Person {
     }
 
     @Override
-    public String toString () {
-                String personFormat = (String.format("Person{id=%d, name='%s', address=" + address.toString() + "}" , id, name));
-                return personFormat;
+    public String toString() {
+        String personFormat = (String.format("Person{id=%d, name='%s', address=" + address.toString() + "}", id, name));
+        return personFormat;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o){
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Person person = (Person) o;
-        return id == person.id &&
-                name.equals(person.name) &&
-                Objects.equals(address, person.getAddress());
+        return this.toString().equals(o.toString());
     }
 }
+
+        //        if (this == o){
+//            return true;
+//        }
+//        if (o == null || getClass() != o.getClass()) {
+//            return false;
+//        }
+//
+//        Person person = (Person) o;
+//        return this.id == person.getId() &&
+//                this.name.equals(person.getName()) &&
+//                this.address.equals(person.getAddress());
+//    }

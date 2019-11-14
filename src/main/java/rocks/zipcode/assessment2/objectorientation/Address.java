@@ -13,7 +13,7 @@ public class Address {
 
     public Address() {
         this.addressLine1 = "";
-        this.addressLine2 ="";
+        this.addressLine2 = "";
         this.city = "";
         this.state = "";
         this.zipcode = "";
@@ -22,9 +22,9 @@ public class Address {
     /**
      * @param addressLine1 - first address line
      * @param addressLine2 - second address line
-     * @param city - city of location
-     * @param state - state of city
-     * @param zipcode - zipcode of region
+     * @param city         - city of location
+     * @param state        - state of city
+     * @param zipcode      - zipcode of region
      */
     public Address(String addressLine1, String addressLine2, String city, String state, String zipcode) {
         this.addressLine1 = addressLine1;
@@ -80,13 +80,14 @@ public class Address {
     }
 
     @Override
-    public String toString () {
+    public String toString() {
         String addressFormat = String.format("Address{addressLine1='%s', addressLine2='%s', city='%s', state='%s', zipcode='%s'}", addressLine1, addressLine2, city, state, zipcode);
         return addressFormat;
     }
 
     @Override
     public boolean equals(Object o) {
+        //return this.toString().equals(o.toString());
         if (this == o){
             return true;
         }
@@ -101,3 +102,4 @@ public class Address {
                 zipcode.equals(address.zipcode);
     }
 }
+

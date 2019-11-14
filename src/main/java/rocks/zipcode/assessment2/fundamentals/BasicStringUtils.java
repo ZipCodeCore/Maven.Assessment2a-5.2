@@ -39,25 +39,25 @@ public class BasicStringUtils {
      * @param charactersToRemove - Characters that should be removed from `string`
      * @return `string` with `charactersToRemove` removed
      */
+
     public static String removeCharacters(String string, String charactersToRemove) {
-    String [] stringArray = string.split("");
-    ArrayList <String> stringList = new ArrayList<>(Arrays.asList(stringArray));
-    String [] charsToRemoveArray = charactersToRemove.split("");
-        for (int i = 0; i < stringList.size(); i++) {
-            for (int j = 0; j < charsToRemoveArray.length; j++){
-                if(stringList.get(i).equals(charsToRemoveArray[j])){
-                    stringList.remove(stringList.get(i));
-                }
-            }
+
+        String[] charsToRemoveArray = charactersToRemove.split("");
+        for (int i = 0; i < charsToRemoveArray.length; i++) {
+
+            string = string.replace(charsToRemoveArray[i], "");
         }
-    String [] resultArray = new String[stringList.size()];
-        resultArray = stringList.toArray(resultArray);
-        String returnString = "";
-        for (int i = 0; i < resultArray.length; i++){
-            returnString += resultArray[i];
-        }
-        return returnString;
+        return string;
     }
+
+//   OR THIS ALSO WORKS
+//        String charsRemoved = "";
+//         for(int i = 0; i < charactersToRemove.length(); i++){
+//        charsRemoved = charsRemoved.replace(string.valueOf(charactersToRemove.charAt(i)),"");
+//    }
+//        return charsRemoved;
+
+
 
     /**
      * @param string - the string to be manipulated
