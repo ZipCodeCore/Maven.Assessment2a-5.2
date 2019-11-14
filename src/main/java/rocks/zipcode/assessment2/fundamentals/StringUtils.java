@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+import java.util.regex.Pattern;
+
 /**
  * @author leon on 28/11/2018.
  */
@@ -10,7 +12,7 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return null;
+        return String.format("%1$" + amountOfPadding + "s", stringToBePadded);
     }
 
     /**
@@ -19,7 +21,7 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        return null;
+        return String.format("%-" + amountOfPadding + "s", stringToBePadded);
     }
 
     /**
@@ -28,7 +30,11 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < numberOfTimeToRepeat ; i++) {
+            sb.append(stringToBeRepeated);
+        }
+        return sb.toString();
     }
 
     /**
@@ -36,7 +42,7 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+        return string.matches("[a-zA-Z\\s\'\"]+");
     }
 
     /**
@@ -44,7 +50,7 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+        return string.matches("[0-9\\s\'\"]+");
     }
 
     /**
@@ -52,6 +58,7 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return null;
+        String specialChars = "!&*()";
+        return string.matches("[" + specialChars + "]+");
     }
 }

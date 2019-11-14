@@ -1,33 +1,35 @@
 package rocks.zipcode.assessment2.atm;
 
 public class Account {
+    private double balance;
 
-    // this is only boiler plate. add your group's code here.
-
-    // ********
-    //
-    // See why you needed to get ATM finished this weekend??
-    //
-    // ********
-    
     public Account(double v) {
+        this.balance = v;
     }
 
     public double balance() {
-        return 0.0;
+        return this.balance;
     }
 
     public boolean closeAccount() {
-        return false;
+        return balance == 0.0;
     }
 
     public void deposit(double v) {
+        this.balance += v;
     }
 
     public Double withdraw(double v) {
-        return 0.0;
+        if(this.balance >= v) {
+            this.balance -= v;
+        }
+        return this.balance;
     }
 
     public void transfer(Account b, double v) {
+        if(this.balance >= v) {
+            b.deposit(v);
+            this.withdraw(v);
+        }
     }
 }
