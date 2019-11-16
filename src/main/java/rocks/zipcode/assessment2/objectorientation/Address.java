@@ -74,20 +74,25 @@ public class Address {
         this.zipcode = zipcode;
     }
 
-    public boolean equals(Address o) {
-        if (this.addressLine1.equals(o.addressLine1)
-                && this.addressLine2.equals(o.addressLine2)
-                && this.city.equals(o.city)
-                && this.state.equals(o.state)
-                && this.zipcode.equals(o.zipcode)){
+    @Override
+    public boolean equals(Object o) {
+//        if (this.addressLine1.equals(o.addressLine1)
+//                && this.addressLine2.equals(o.addressLine2)
+//                && this.city.equals(o.city)
+//                && this.state.equals(o.state)
+//                && this.zipcode.equals(o.zipcode)){
+        if (this.toString().equals(o.toString())){
             return true;
         }
         return false;
     }
 
     public String toString(){
-        String addressString = "Address{addressLine1='" + this.addressLine1 + "', addressLine2='" + this.addressLine2 + "', city='" + this.city + "', state='" + this.state + "', zipcode='" + this.zipcode + "'}";
-        return addressString;
+        if (this != null) {
+            String addressString = "Address{addressLine1='" + this.addressLine1 + "', addressLine2='" + this.addressLine2 + "', city='" + this.city + "', state='" + this.state + "', zipcode='" + this.zipcode + "'}";
+            return addressString;
+        }
+        else { return null; }
     }
 
 }

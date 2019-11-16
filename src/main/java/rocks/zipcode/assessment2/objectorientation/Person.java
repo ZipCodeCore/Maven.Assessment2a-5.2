@@ -18,7 +18,10 @@ public class Person {
     public Person(Long id, String name, Address address) {
         this.id = id;
         this.name = name;
-        this.address = address;
+        if (address != null) {
+            this.address = address;
+        }
+        else { this.address = new Address(); }
 
     }
 
@@ -52,15 +55,23 @@ public class Person {
         this.address = address;
     }
 
-    public boolean equals(Person o) {
-        if (java.util.Objects.equals(this.id, o.id) && java.util.Objects.equals(this.name, o.name) && java.util.Objects.equals(this.address, o.address)){return true;}
-        else if (java.util.Objects.equals(this.id, o.id) && java.util.Objects.equals(this.name, o.name) && this.address.equals(o.address)){return true;}
+    @Override
+    public boolean equals(Object o) {
+//        if (java.util.Objects.equals(this.id, o.id) && java.util.Objects.equals(this.name, o.name) && java.util.Objects.equals(this.address, o.address)){return true;}
+//        else if (java.util.Objects.equals(this.id, o.id) && java.util.Objects.equals(this.name, o.name) && this.address.equals(o.address)){return true;}
+        if (this.toString().equals(o.toString())){ return true;}
         return false;
     }
 
     public String toString(){
         String person;
-        person = "Person{id=" + id.toString() + ", name='"+ name.toString() + "', address=" + address.toString() + "}";
+        person = "Person{id="
+                + id
+                + ", name='"
+                + name
+                + "', address="
+                + address.toString()
+                + "}";
         return person;
     }
 
