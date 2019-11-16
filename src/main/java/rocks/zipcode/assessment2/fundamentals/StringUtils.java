@@ -76,7 +76,7 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        String specialCharacters = "[" + "-/@#!*$%^&.'_+={}()"+ "]+" ;
+        String specialCharacters = "[" + "-/@#!*$%^&.'_+={}()"+ "]";
 
         if ( string.matches(specialCharacters)) {
             return true;
