@@ -11,7 +11,7 @@ public class Account {
     // See why you needed to get ATM finished this weekend??
     //
     // ********
-    
+
     public Account(double v) {
         this.balance = v;
 
@@ -22,7 +22,7 @@ public class Account {
     }
 
     public boolean closeAccount() {
-        return false;
+        return (balance == 0) ? true : false;
     }
 
     public void deposit(double v) {
@@ -30,9 +30,17 @@ public class Account {
     }
 
     public Double withdraw(double v) {
-        return balance() - v;
+        if (balance < v) {
+            return 0.0;
+        }
+        balance = balance - v;
+        return balance;
     }
 
     public void transfer(Account b, double v) {
+        if(v <= this.balance) {
+            this.withdraw(v);
+            b.deposit(v);
+        }
     }
 }

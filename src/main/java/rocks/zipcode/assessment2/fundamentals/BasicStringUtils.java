@@ -41,29 +41,27 @@ public class BasicStringUtils {
     }
 
     /**
-     * @param string - the string to be manipulated
+     * @param string             - the string to be manipulated
      * @param charactersToRemove - Characters that should be removed from `string`
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {   //TODO lookup regex for remove characters
 
-        String newString = string.replace(charactersToRemove, "");
-        string = newString;
+        String[] strArr = charactersToRemove.split("");
+        for (int i = 0; i < strArr.length; i++) {
+            string = string.replace(strArr[i], "");
+        }
 
         return string;
     }
 
     /**
-     * @param string - the string to be manipulated
+     * @param string             - the string to be manipulated
      * @param charactersToRemove - characters to be removed from the string
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        String newString = string.replace(charactersToRemove, "");
-        StringBuilder stringBuilder1 = new StringBuilder(newString);
-        stringBuilder1.reverse();
-        string = stringBuilder1.toString();
+        return reverse(removeCharacters(string, charactersToRemove));
 
-        return string;
     }
 }

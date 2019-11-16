@@ -15,7 +15,7 @@ public class StringUtils {
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
         String padding = " ";
-        String repatedStr = new String(new char[amountOfPadding]).replace("\0", padding);
+        String repatedStr = new String(new char[amountOfPadding - stringToBePadded.length()]).replace("\0", padding);
         return repatedStr + stringToBePadded;
     }
 
@@ -26,8 +26,8 @@ public class StringUtils {
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
         String padding = " ";
-        String newString = Collections.nCopies(amountOfPadding, padding).stream().collect(Collectors.joining(""));
-        return stringToBePadded + newString;
+        String repatedStr = new String(new char[amountOfPadding - stringToBePadded.length()]).replace("\0", padding);
+        return stringToBePadded + repatedStr;
     }
 
     /**
@@ -48,7 +48,7 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return string.matches("^[a-zA-Z\\s]");
+        return string.matches("^[a-zA-Z ]*$");
     }
 
     /**
@@ -56,7 +56,7 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return string.matches("[0-9]");
+        return string.matches("^[0-9]*$");
     }
 
     /**
@@ -64,6 +64,6 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return string.matches("-/@#$%^&_+=()");
+        return string.matches("^[^a-zA-Z 0-9]*$");
     }
 }

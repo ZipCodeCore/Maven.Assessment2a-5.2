@@ -13,10 +13,10 @@ public class MonthConversion {
 
     /**
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
-     * @param monthName - name of month
+     * @param monthName   - name of month
      */
 
-    public MonthConversion()    {
+    public MonthConversion() {
         monthConversionMap = new HashMap<Integer, String>();
 
 
@@ -39,7 +39,7 @@ public class MonthConversion {
         if (monthNumber < 1 || monthNumber > 12) {
             throw new NullPointerException("Invalid Number");
         }
-         return monthConversionMap.get(monthNumber);
+        return monthConversionMap.get(monthNumber);
 
     }
 
@@ -47,18 +47,14 @@ public class MonthConversion {
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
-        Object key = null;
-        for(Map.Entry entry: monthConversionMap.entrySet()) {
-            if(monthName.equals(entry.getValue())) {
-                key = entry.getKey();
-            }   else    {
-                key = null;
-                break;
+    public Integer getNumber(String monthName) {
+        for (Integer key : monthConversionMap.keySet()) {
+            if (monthConversionMap.get(key).equals(monthName)) {
+                return key;
             }
         }
+        return null;
 
-        return (Integer)key;
     }
 
     /**
@@ -74,7 +70,10 @@ public class MonthConversion {
      * @return true if the monthName is in the valueSet
      */
     public Boolean isValidMonth(String monthName) {
-        return null;
+        if (this.getNumber(monthName) == null) {
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -86,9 +85,10 @@ public class MonthConversion {
 
     /**
      * @param monthNumber - number of month in year
-     * @param monthName - name of month
+     * @param monthName   - name of month
      */
     public void update(Integer monthNumber, String monthName) {
+        monthConversionMap.replace(monthNumber, monthName);
 
     }
 }
