@@ -1,11 +1,14 @@
 package rocks.zipcode.assessment2.generics;
 
 
+import com.sun.tools.javac.tree.JCTree;
+import com.sun.tools.javac.util.Context;
 import rocks.zipcode.assessment2.generics.ageable.Ageable;
 import rocks.zipcode.assessment2.generics.ageable.Cat;
 import rocks.zipcode.assessment2.generics.ageable.Dog;
 import rocks.zipcode.assessment2.generics.ageable.Person;
 
+import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -20,9 +23,10 @@ import java.util.Iterator;
  */
 public class Shelter<T extends Ageable> implements Iterable {
 
-    Shelter<T>shelter;
+    ArrayList<Ageable>shelter = new ArrayList<>();
 
-    public Shelter() throws NullPointerException {
+
+    public Shelter()throws NullPointerException{
 
 
     }
@@ -31,12 +35,12 @@ public class Shelter<T extends Ageable> implements Iterable {
      * @return the number of item in the shelter
      */
     public int size() {
-        return this.size();
+        return shelter.size();
 
     }
 
     public void add(Object object) {
-        shelter.add(object);
+        shelter.add((Ageable) object);
     }
 
     public Boolean contains(Object object) {
@@ -52,11 +56,12 @@ public class Shelter<T extends Ageable> implements Iterable {
     }
 
     public Integer getIndexOf(Object ageable) {
-        return shelter.getIndexOf(ageable);
+        return shelter.indexOf(ageable);
     }
 
     @Override
     public Iterator iterator() {
         return null;
     }
-}
+
+    }

@@ -13,7 +13,7 @@ public class Animal {
     Address address;
 
     public Animal() {
-        this.setId(0L);
+        
         this.setOwner(new Person());
         this.address = new Address();
     }
@@ -44,6 +44,6 @@ public class Animal {
     }
 
     public Address getAddress() {
-        return null;
+        return this.owner.getAddress();
     }
 }

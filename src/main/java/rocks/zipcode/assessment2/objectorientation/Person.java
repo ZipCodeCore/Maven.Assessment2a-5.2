@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.objectorientation;
 
+import java.util.Objects;
+
 /**
  * @author leon on 28/11/2018.
  * @ATTENTION_TO_STUDENTS - Ensure that you have completed the `Address` class before attempting this class
@@ -21,7 +23,7 @@ public class Person {
 
     public Person() {
         this.setName("");
-        this.setId(0L);
+        this.setId(Long.MIN_VALUE);
         this.setAddress(new Address());
     }
 
@@ -50,7 +52,24 @@ public class Person {
     }
 
     @Override
-    public boolean equals(Object o) {
-        return (Boolean)null;
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address=" + address +
+                '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        Person o1 = (Person) o;
+        if(o1.id == this.id) {
+            return true;
+        }else if(Objects.equals(o1.name, this.name)){
+            return true;
+        }
+        return false;
+    }
+
 }
+

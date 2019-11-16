@@ -3,6 +3,7 @@ package rocks.zipcode.assessment2.objectorientation;
 import com.sun.org.apache.xalan.internal.xsltc.dom.AdaptiveResultTreeImpl;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * @author leon on 28/11/2018.
@@ -81,7 +82,24 @@ public class Address {
     }
 
     @Override
+    public String toString() {
+        return "Address{" +
+                "addressLine1='" + addressLine1 + '\'' +
+                ", addressLine2='" + addressLine2 + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
+        Address o1 = (Address) o;
+        if(o1.addressLine1 == this.addressLine2) {
+            return true;
+        }else if(Objects.equals(o1.zipcode, this.zipcode)){
+        return true;
+        }
       return false;
     }
 
