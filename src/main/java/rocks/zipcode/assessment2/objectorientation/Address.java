@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.objectorientation;
 
+import java.util.Objects;
+
 /**
  * @author leon on 28/11/2018.
  */
@@ -20,6 +22,17 @@ public class Address {
     String city = "";
     String state = "";
     String zipcode = "";
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "addressLine1='" + addressLine1 + '\'' +
+                ", addressLine2='" + addressLine2 + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                '}';
+    }
 
     public Address(String addressLine1, String addressLine2, String city, String state, String zipcode) {
         this.addressLine1 = addressLine1;
@@ -81,16 +94,17 @@ public class Address {
 
     @Override
     public boolean equals(Object o) {
-        Address a = new Address();
-        Address b = new Address();
-        if (a == b){
+//        Address a = new Address();
+//        Address b = new Address();
+//        if (a == b){
+//            return true;
+//        }
+//        return false;
+        Address a1= (Address) o;
+        if (a1.addressLine1.equals(this.addressLine1) && Objects.equals(a1.zipcode, this.zipcode)){
             return true;
         }
         return false;
     }
 
-//    @Override
-//    public String toString(Address showAddress){
-//        return showAddress.toString();
-//    }
 }

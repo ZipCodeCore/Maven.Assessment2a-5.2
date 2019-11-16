@@ -10,16 +10,29 @@ public class Person {
      * @param name - name of person
      * @param address - address of person
      */
-    Long id = 0L ;
+    Long id =0L;
     String name = "";
-    Address personAddress = new Address();
+    Address address= new Address();
+
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address=" + address +
+                '}';
+    }
+
     public Person(Long id, String name, Address address) {
-        this.id = Long.MIN_VALUE;
+        this.id = Long.MAX_VALUE;
         this.name = name;
-        this.personAddress = address;
+        this.address = address;
     }
 
     public Person() {
+        this.id = Long.MIN_VALUE;
+        this.name = name;
     }
 
     public Long getId() {
@@ -42,16 +55,19 @@ public class Person {
 
     public Address getAddress() {
 
-        return personAddress;
+        return address;
     }
 
     public void setAddress(Address address) {
 
-        this.personAddress = address;
+        this.address = address;
     }
 
     @Override
     public boolean equals(Object o) {
-        return (Boolean)null;
+        Person p1 = new Person();
+        if (p1.toString().equals(o.toString())){
+            return true;
+        }return false;
     }
 }
