@@ -55,19 +55,20 @@ public class Person {
         this.address = address;
     }
 
-    @Override
-    public String toString() {
-        String personFormat = (String.format("Person{id=%d, name='%s', address=" + address.toString() + "}", id, name));
-        return personFormat;
-    }
+//    @Override
+//    public String toString() {
+//
+//
+//        //String personFormat = (String.format("Person{id=%d, name='%s', address=" + address.toString() + "}", id, name));
+//        return personFormat;
+//    }
 
     @Override
     public boolean equals(Object o) {
-        return this.toString().equals(o.toString());
-    }
-}
+        return (this.toString().equals(o.toString()));
 
-        //        if (this == o){
+//
+//        if (this == o) {
 //            return true;
 //        }
 //        if (o == null || getClass() != o.getClass()) {
@@ -77,5 +78,19 @@ public class Person {
 //        Person person = (Person) o;
 //        return this.id == person.getId() &&
 //                this.name.equals(person.getName()) &&
-//                this.address.equals(person.getAddress());
-//    }
+//                this.address().equals(person.getAddress());
+//                addressLine2.equals(address.addressLine2) &&
+//                city.equals(address.city) &&
+//                state.equals(address.state) &&
+//                zipcode.equals(address.zipcode);;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address=" + address +
+                '}';
+    }
+}

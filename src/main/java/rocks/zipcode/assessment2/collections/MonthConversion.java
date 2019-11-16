@@ -35,23 +35,25 @@ public class MonthConversion {
      * @return - the ordinal of the month in the year
      */
     public Integer getNumber(String monthName) {
+
         Integer monthNum = 0;
         Set<Map.Entry<Integer, String>> set = myMap.entrySet();
         for (Map.Entry<Integer, String> iterator : set) {
             if (iterator.getValue().equals(monthName)) {
-                monthNum = iterator.getKey();
-            } else monthNum = null;
+                return iterator.getKey();
+            }
         }
-        return monthNum;
+        return null;
     }
 
-//          THIS ALSO WORKS
+         // THIS ALSO WORKS
 //        for (int key : myMap.keySet()){
-//            if (myMap.get(key).equals(myMap.keySet()){
+//            if (myMap.get(key).equals(myMap.keySet())){
 //                return key;
 //            }
-//            return null;
 //        }
+//        return -1;
+//    }
 
     /**
      * @param monthNumber
