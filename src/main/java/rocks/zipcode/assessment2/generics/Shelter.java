@@ -19,6 +19,7 @@ public class Shelter<T extends Ageable> implements Iterable<T>{
 
     public Shelter(){
         this.items = new ArrayList<T>();
+//        this.items = new T(); you cant do this because with generics, it does not know how to compile this
     }
 
     /**
