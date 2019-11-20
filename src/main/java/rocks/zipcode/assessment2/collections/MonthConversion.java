@@ -33,7 +33,7 @@ public class MonthConversion {
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName){
+    public Integer getNumber(String monthName){
         Set set = month.entrySet();
         Iterator i = set.iterator();
         Integer result = null;

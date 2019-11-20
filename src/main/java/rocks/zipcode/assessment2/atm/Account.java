@@ -3,7 +3,7 @@ package rocks.zipcode.assessment2.atm;
 public class Account {
 
     // this is only boiler plate. add your group's code here.
-    private Double accountBalance;
+    private double accountBalance;
 
     //
     // See why you needed to get ATM finished this weekend??
@@ -16,7 +16,7 @@ public class Account {
     }
 
     public double balance() {
-        return accountBalance;
+        return this.accountBalance;
     }
 
     public boolean closeAccount() {
@@ -30,22 +30,20 @@ public class Account {
     }
 
     public void deposit(double v) {
-        double newBalance = balance() + v;
-        accountBalance = newBalance;
+        accountBalance += v;
     }
 
     public Double withdraw(double v) {
-        double newBalance = accountBalance - v;
-        if (accountBalance <= 0) {
-            return accountBalance;
+        if (accountBalance >= v) {
+            accountBalance -= v;
         }
-        return newBalance;
+        return accountBalance;
     }
 
     public void transfer(Account b, double v) {
-//        if(balance() > 0.00){
-//            withdraw(v);
-//        }
-//        b.deposit(v);
+        if(this.accountBalance >= v){
+            b.deposit(v);
+            this.withdraw(v);
+        }
     }
 }
