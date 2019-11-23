@@ -46,6 +46,19 @@ public class Person {
 
     @Override
     public boolean equals(Object o) {
-        return (Boolean)null;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Person person = (Person) o;
+        return name.equals(person.name);
+    }
+
+    @Override
+    public String toString(){
+        return "Person{" + "id=" + id + ", name='" + name + '\'' +
+                ", address=" + address + '}';
     }
 }

@@ -38,50 +38,32 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        if (string.matches("[a-zA-Z]")) {
-            return true;
-        } else {
-            return false;
+        for (int i = 0; i < string.length(); i++) {
+            if (!(Character.isAlphabetic(string.charAt(i))) && (!Character.isSpaceChar(string.charAt(i)))) {
+                return false;
+            }
         }
+        return true;
     }
 
-            /**
-             * @param string - string to be evaluated
-             * @return - true if string only contains numeric characters
-             */
+    /**
+     * @param string - string to be evaluated
+     * @return - true if string only contains numeric characters
+     */
     public static Boolean isNumericString(String string) {
-        boolean numeric = true;
-        if(string.matches("-?\\d+(\\.\\d+)?")) {
-            return true;
-        }else {
-            return false;
+        for (int i = 0; i < string.length(); i++) {
+            if (!(Character.isDigit(string.charAt(i)))) {
+                return false;
+            }
         }
+        return true;
     }
-//        boolean containsNumbers = false;
-//
-//        if (string != null && !string.isEmpty()) {
-//            for (char c : string.toCharArray()) {
-//                if (containsNumbers = Character.isDigit(c)) {
-//                    break;
-//                }
-//            }
-//        }
-//
-//        return containsNumbers;
-//    }
-    //https://stackoverflow.com/questions/18590901/check-if-a-string-contains-numbers-java
 
     /**
      * @param string - string to be evaluated
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        String specialCharacters = "[" + "-/@#!*$%^&.'_+={}()"+ "]";
-
-        if ( string.matches(specialCharacters)) {
-            return true;
-        }else{
-            return false;
-        }
+        return string.matches("[" + "-/@#!*$%^&.'_+={}()"+ "]+");
     }
 }
