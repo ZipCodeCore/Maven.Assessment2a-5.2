@@ -65,9 +65,8 @@ public class Person {
 
     @Override
     public boolean equals(Object o) {
-        Person p1 = new Person();
-        if (p1.toString().equals(o.toString())){
-            return true;
-        }return false;
+        return toString().equals(o.toString());
     }
+
+
 }
