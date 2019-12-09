@@ -12,6 +12,8 @@ public class MonthConversion {
 Integer monthNumber;
 String monthName;
 Map<Integer,String>map;
+
+
 public MonthConversion(){
     this.map=new HashMap<>();
 }
@@ -28,7 +30,8 @@ public MonthConversion(){
      * @param monthName - name of month
      */
     public void add(Integer monthNumber, String monthName) {
-        map.put(monthNumber,monthName);
+        if (!map.containsValue(monthName) && !map.containsKey(monthNumber))
+            map.put(monthNumber,monthName);
 
     }
 
@@ -39,7 +42,14 @@ public MonthConversion(){
     public String getName(Integer monthNumber) {
 
         //throw new NullPointerException();
-       return map.get(monthNumber);
+        String value=null;
+        for(Map.Entry<Integer,String> e:map.entrySet()){
+            if(e.getKey().equals(monthNumber))
+           // if(map.keySet().equals(monthNumber))
+             value=e.getValue();
+
+        }
+       return value;
     }
 
     /**
@@ -47,13 +57,13 @@ public MonthConversion(){
      * @return - the ordinal of the month in the year
      */
     public int getNumber(String monthName) {
-        int key=0;
+        Integer key=null;
         for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            if(entry.getValue().equals(monthName)){
             key = entry.getKey();
+            return (Integer)key;}
         }
-        return key;
-
-        //return (Integer)null;
+        return (Integer)key;
     }
 
     /**
@@ -88,7 +98,7 @@ public MonthConversion(){
      * @param monthName - name of month
      */
     public void update(Integer monthNumber, String monthName) {
-        MonthConversion conversion = new MonthConversion();
-        conversion.update(monthNumber,monthName);
+
+       map.replace(monthNumber,monthName);
     }
 }

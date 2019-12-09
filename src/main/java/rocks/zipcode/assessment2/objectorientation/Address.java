@@ -1,9 +1,11 @@
 package rocks.zipcode.assessment2.objectorientation;
 
+import java.util.Comparator;
+
 /**
  * @author leon on 28/11/2018.
  */
-public class Address {
+public class Address  {
     String addressLine1;
     String addressLine2;
     String city;
@@ -11,19 +13,19 @@ public class Address {
     String zipcode;
 
     public Address() {
-        this.addressLine1 = "";
-        this.addressLine2 = "";
-        this.city = "";
-        this.state = "";
-        this.zipcode = "";
+         addressLine1 = "";
+         addressLine2 = "";
+         city = "";
+         state = "";
+         zipcode = "";
     }
 
     /**
      * @param addressLine1 - first address line
      * @param addressLine2 - second address line
-     * @param city         - city of location
-     * @param state        - state of city
-     * @param zipcode      - zipcode of region
+     * @param city - city of location
+     * @param state - state of city
+     * @param zipcode - zipcode of region
      */
     public Address(String addressLine1, String addressLine2, String city, String state, String zipcode) {
         this.addressLine1 = addressLine1;
@@ -32,11 +34,10 @@ public class Address {
         this.state = state;
         this.zipcode = zipcode;
 
-
     }
 
     public String getAddressLine1() {
-        return addressLine1;
+        return this.addressLine1;
     }
 
     public void setAddressLine1(String addressLine1) {
@@ -44,7 +45,7 @@ public class Address {
     }
 
     public String getAddressLine2() {
-        return addressLine2;
+        return this.addressLine2;
     }
 
     public void setAddressLine2(String addressLine2) {
@@ -52,7 +53,7 @@ public class Address {
     }
 
     public String getCity() {
-        return city;
+        return this.city;
     }
 
     public void setCity(String city) {
@@ -60,7 +61,7 @@ public class Address {
     }
 
     public String getState() {
-        return state;
+        return this.state;
     }
 
     public void setState(String state) {
@@ -68,21 +69,23 @@ public class Address {
     }
 
     public String getZipcode() {
-        return zipcode;
+        return this.zipcode;
     }
 
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
+    public String toString(){
+
+        StringBuilder address = new StringBuilder();
+        address.append(String.format("Address{addressLine1='%s', addressLine2='%s', city='%s', state='%s', zipcode='%s'}",getAddressLine1(),getAddressLine2(),getCity(),getState(),getZipcode()));
+        return address.toString();
+    }
+
 
     @Override
     public boolean equals(Object o) {
-
-
-            return (Boolean)null;
-
+       return this.toString().equals(o.toString()) ;
 
     }
-
-
-    }
+}

@@ -20,7 +20,9 @@ public class Account {
     }
 
     public boolean closeAccount() {
-        if(this.accountBalance==0.0){return  true;}
+        if(this.accountBalance==0.0){
+            return  true;
+        }
         else
         return false;
     }
@@ -31,19 +33,21 @@ public class Account {
     }
 
     public Double withdraw(double v) {
-        this.accountBalance-=v;
-        return this.accountBalance;
+        if(v <= this.accountBalance)
+        {this.accountBalance -= v;
+        return this.accountBalance;}
+        else
+            return 0.0;
     }
 
     public void transfer(Account b, double v) {
-        if(this.accountBalance<v){
-            b.accountBalance+=this.accountBalance;
-            this.withdraw(accountBalance);
-        }
-        else{
+        if(v<=this.accountBalance){
+            this.accountBalance -=v;
             b.accountBalance+=v;
-            this.withdraw(v);
+
         }
+
+
 
     }
 }

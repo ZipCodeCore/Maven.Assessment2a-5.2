@@ -4,32 +4,36 @@ package rocks.zipcode.assessment2.objectorientation;
  * @author leon on 28/11/2018.
  * @ATTENTION_TO_STUDENTS - Ensure that you have completed the `Address` class before attempting this class
  */
-public class Person extends Address {
+public class Person {
     /**
      * @param id - id of person
      * @param name - name of person
      * @param address - address of person
      */
-    private Long id;
-    String name;
-    Address address;
+    private  Long id ;
+    private  String name ;
+    private  Address address;
 
 
     public Person(Long id, String name, Address address) {
         this.id=id;
         this.name=name;
-        this.address=address;
+        if(address==null){
+            this.address=new Address();
+        }
+        else {
+            this.address = address;
+        }
     }
 
     public Person() {
         this.name="";
         this.id = Long.MIN_VALUE;
         this.address=new Address();
-
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -38,8 +42,7 @@ public class Person extends Address {
     }
 
     public String getName() {
-
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -47,8 +50,7 @@ public class Person extends Address {
     }
 
     public Address getAddress() {
-
-        return address;
+        return this.address;
     }
 
     public void setAddress(Address address) {
@@ -58,7 +60,11 @@ public class Person extends Address {
 
     @Override
     public boolean equals(Object o) {
+        return this.toString().equals(o.toString());
+    }
 
-        return (Boolean)null;
+    @Override
+    public String toString() {
+      return String.format("Person{id=%d, name='%s', address=%s}",getId(),getName(),getAddress());
     }
 }

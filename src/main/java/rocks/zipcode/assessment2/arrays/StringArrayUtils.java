@@ -15,24 +15,13 @@ public class StringArrayUtils {
      * @return an array with all elements between `startingIndex` and `endingIndex`
      */
     public static String[] getSubArray(String[] arrayToBeSpliced, int startingIndex, int endingIndex) {
-        ArrayList<String>list=new ArrayList<>();
+
+             String[] slicedArr=Arrays.copyOfRange(arrayToBeSpliced,startingIndex,endingIndex);
+             return slicedArr;
+        }
 
 
-            for(int i = startingIndex;i<=endingIndex;i++){
-                list.add(arrayToBeSpliced[i]);
 
-
-            }
-
-
-        String[]arr=new String[list.size()];
-        list.toArray(arr);
-
-
-        return arr;
-
-
-    }
 
 
     /**
@@ -40,7 +29,8 @@ public class StringArrayUtils {
      * @param startingIndex - starting index of array to be spliced
      * @return an array all elements between after `startingIndex`
      */
-    public static String[] getEndingArray(String[] arrayToBeSpliced, int startingIndex) {
-        return null;
+    public static String[] getEndingArray(String[] arrayToBeSpliced, int startingIndex)
+    {   String[] slicedArr=Arrays.copyOfRange(arrayToBeSpliced,startingIndex,arrayToBeSpliced.length);
+        return slicedArr;
     }
 }
