@@ -35,13 +35,14 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        String result = "";
-        for (int i = 0; i < string.length(); i++ ) {
-            if (charactersToRemove.indexOf(string.charAt(i)) == -1) {
-                result += string.charAt(i);
-            }
-        }
-        return result;
+//        String result = "";
+//        for (int i = 0; i < string.length(); i++ ) {
+//            if (charactersToRemove.indexOf(string.charAt(i)) == -1) {
+//                result += string.charAt(i);
+//            }
+//        }
+//        return result;
+        return string.replaceAll("["+charactersToRemove+"]","");
     }
 
     /**
