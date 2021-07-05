@@ -23,7 +23,7 @@ public class AnimalConstructorTest {
         Person actualOwner = animal.getOwner();
         Address actualAddress = animal.getAddress();
         Long actualId = animal.getId();
-
+        System.out.println(actualId);
         // then
         Assert.assertEquals(expectedId, actualId);
         Assert.assertEquals(expectedOwner, actualOwner);
