@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+import com.sun.xml.internal.bind.v2.TODO;
+
 public class BasicStringUtils {
     /**
      * @param string1 - Base string to be added to
@@ -7,7 +9,7 @@ public class BasicStringUtils {
      * @return concatenation of `string1` and `string2`
      */
     public static String concatentate(String string1, String string2) {
-        return null;
+        return string1 + string2;
     }
 
     /**
@@ -15,7 +17,12 @@ public class BasicStringUtils {
      * @return an identical string with characters in reverse order
      */
     public static String reverse(String string1) {
-        return null;
+        StringBuilder stringBuilder = new StringBuilder(string1);
+        stringBuilder.reverse();
+        string1 = stringBuilder.toString();
+
+
+        return string1;
     }
 
     /**
@@ -24,24 +31,37 @@ public class BasicStringUtils {
      * @return concatenation of the reverse of `string1` and reverse of `string2`
      */
     public static String reverseThenConcatenate(String string1, String string2) {
-        return null;
+        StringBuilder stringBuilder1 = new StringBuilder(string1);
+        StringBuilder stringBuilder2 = new StringBuilder(string2);
+        stringBuilder1.reverse();
+        stringBuilder2.reverse();
+        String string3 = stringBuilder1.toString() + stringBuilder2.toString();
+
+        return string3;
     }
 
     /**
-     * @param string - the string to be manipulated
+     * @param string             - the string to be manipulated
      * @param charactersToRemove - Characters that should be removed from `string`
      * @return `string` with `charactersToRemove` removed
      */
-    public static String removeCharacters(String string, String charactersToRemove) {
-        return null;
+    public static String removeCharacters(String string, String charactersToRemove) {   //TODO lookup regex for remove characters
+
+        String[] strArr = charactersToRemove.split("");
+        for (int i = 0; i < strArr.length; i++) {
+            string = string.replace(strArr[i], "");
+        }
+
+        return string;
     }
 
     /**
-     * @param string - the string to be manipulated
+     * @param string             - the string to be manipulated
      * @param charactersToRemove - characters to be removed from the string
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        return reverse(removeCharacters(string, charactersToRemove));
+
     }
 }
