@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+//import com.sun.org.apache.xpath.internal.operations.String;
+
 /**
  * @author leon on 28/11/2018.
  */
@@ -10,7 +12,13 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return null;
+        StringBuilder sb = new StringBuilder(stringToBePadded);
+        int numberOfSpaces = amountOfPadding - stringToBePadded.length();
+        for (int i = 0; i < numberOfSpaces; i++) {
+             sb.insert(0," ");
+        }
+        String result = sb.toString();
+        return result;
     }
 
     /**
@@ -19,7 +27,12 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        return null;
+        StringBuilder sb = new StringBuilder(stringToBePadded);
+        int numberOfSpaces = amountOfPadding - stringToBePadded.length();
+        for (int i = 0; i < numberOfSpaces; i++) {
+            sb.append(" ");
+        }
+        return sb.toString();
     }
 
     /**
@@ -28,7 +41,11 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+        StringBuilder sb = new StringBuilder(stringToBeRepeated);
+        for (int i = 0; i < numberOfTimeToRepeat - 1; i++) {
+             sb.append(stringToBeRepeated);
+        }
+        return sb.toString();
     }
 
     /**
@@ -36,7 +53,8 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+
+        return string.matches("[a-z A-Z]+");
     }
 
     /**
@@ -44,7 +62,7 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+        return string.matches("[0-9]+");
     }
 
     /**
@@ -52,6 +70,7 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return null;
+        return string.matches("[^A-Z a-z0-9]+");
+
     }
 }

@@ -4,8 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcode.assessment2.collections.Inventory;
 
-import java.util.Arrays;
-
 public class AddItemToInventroy {
 
     @Test
