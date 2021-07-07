@@ -1,5 +1,8 @@
 package rocks.zipcode.assessment2.collections;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Use a map to solve
  */
@@ -8,8 +11,9 @@ public class MonthConversion {
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
      * @param monthName - name of month
      */
+    Map<Integer, String> calendar = new HashMap<>();
     public void add(Integer monthNumber, String monthName) {
-
+        calendar.put(monthNumber,monthName);
     }
 
     /**
@@ -17,7 +21,11 @@ public class MonthConversion {
      * @return the name of the respective month
      */
     public String getName(Integer monthNumber) {
-        throw new NullPointerException();
+        try{
+        return calendar.get(monthNumber);}
+        catch (NullPointerException e){
+
+            return null;}
     }
 
     /**
@@ -25,7 +33,14 @@ public class MonthConversion {
      * @return - the ordinal of the month in the year
      */
     public int getNumber(String monthName) {
-        return (Integer)null;
+        Integer result = 0;
+        for (Map.Entry<Integer, String> entry : calendar.entrySet()) {
+            if (entry.getValue().contains(monthName)) {
+                result = entry.getKey();
+            }
+        }
+        return result;
+
     }
 
     /**
@@ -33,7 +48,7 @@ public class MonthConversion {
      * @return true if the monthNumber is in the keySet
      */
     public Boolean isValidNumber(Integer monthNumber) {
-        return null;
+        return calendar.containsKey(monthNumber);
     }
 
     /**
@@ -41,14 +56,14 @@ public class MonthConversion {
      * @return true if the monthName is in the valueSet
      */
     public Boolean isValidMonth(String monthName) {
-        return null;
+        return calendar.containsValue(monthName);
     }
 
     /**
      * @return number of entries in this mapping
      */
     public Integer size() {
-        return -1;
+        return calendar.size();
     }
 
     /**
@@ -56,6 +71,7 @@ public class MonthConversion {
      * @param monthName - name of month
      */
     public void update(Integer monthNumber, String monthName) {
+        calendar.replace(monthNumber,monthName);
 
     }
 }
