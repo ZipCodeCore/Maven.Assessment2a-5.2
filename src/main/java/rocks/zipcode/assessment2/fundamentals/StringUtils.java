@@ -10,7 +10,8 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return null;
+        // found on stackoverflow lol
+        return String.format("%" + amountOfPadding + "s", stringToBePadded);
     }
 
     /**
@@ -19,7 +20,8 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        return null;
+        // found on stackoverflow lol
+        return String.format("%-" + amountOfPadding + "s", stringToBePadded);
     }
 
     /**
@@ -28,7 +30,8 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+        String repeat = new String(new char[numberOfTimeToRepeat]).replace("\0", stringToBeRepeated);
+        return repeat;
     }
 
     /**
@@ -36,7 +39,7 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+        return string.matches("[a-zA-Z]+");
     }
 
     /**
@@ -44,7 +47,7 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+        return string.matches("[0-9]+");
     }
 
     /**
@@ -52,6 +55,6 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return null;
+        return string.matches("[!-*]+");
     }
 }
