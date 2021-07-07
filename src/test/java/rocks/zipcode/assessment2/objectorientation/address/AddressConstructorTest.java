@@ -41,6 +41,7 @@ public class AddressConstructorTest {
         Address address = new Address(expectedLine1, expectedLine2, expectedCity, expectedState, expectedZipcode);
 
         // then
+
         Assert.assertEquals(expectedLine1, address.getAddressLine1());
         Assert.assertEquals(expectedLine2, address.getAddressLine2());
         Assert.assertEquals(expectedCity, address.getCity());
