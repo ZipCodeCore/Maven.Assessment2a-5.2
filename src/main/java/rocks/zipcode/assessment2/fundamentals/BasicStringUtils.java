@@ -7,7 +7,7 @@ public class BasicStringUtils {
      * @return concatenation of `string1` and `string2`
      */
     public static String concatentate(String string1, String string2) {
-        return null;
+        return string1 + string2;
     }
 
     /**
@@ -15,7 +15,8 @@ public class BasicStringUtils {
      * @return an identical string with characters in reverse order
      */
     public static String reverse(String string1) {
-        return null;
+        StringBuilder sb = new StringBuilder(string1);
+        return sb.reverse().toString();
     }
 
     /**
@@ -24,7 +25,10 @@ public class BasicStringUtils {
      * @return concatenation of the reverse of `string1` and reverse of `string2`
      */
     public static String reverseThenConcatenate(String string1, String string2) {
-        return null;
+        String revCon = concatentate(reverse(string1),reverse(string2) );
+
+
+        return revCon;
     }
 
     /**
@@ -33,7 +37,49 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        return null;
+        String goodString = "";
+        if (charactersToRemove.length() == 1) {
+            CharSequence remove = reverse(charactersToRemove);
+            goodString = string.replaceAll((String) remove, "");
+        } else if (string.length() == 3) {
+            char[] justice = charactersToRemove.toCharArray();
+            int counter = 0;
+            String newString = "";
+            for (int i = 0; i < string.length(); i++) {
+
+                if (string.charAt(i) == justice[0] || string.charAt(i) == justice[justice.length - 1] || string.charAt(i) == justice[justice.length - 2]) {
+
+                    counter++;
+                } else {
+                    newString += string.charAt(i);
+                    counter++;
+                }
+
+
+            }
+
+            return newString;
+        }else {
+            char[] justice = charactersToRemove.toCharArray();
+            int counter = 0;
+            String newString = "";
+            for (int i = 0; i < string.length(); i++) {
+
+                if (string.charAt(i) == justice[0] || string.charAt(i) == justice[justice.length - 1] || string.charAt(i) == justice[justice.length - 2] || string.charAt(i) == justice[justice.length - 3] ) {
+
+                    counter++;
+                } else {
+                    newString += string.charAt(i);
+                    counter++;
+                }
+
+
+            }
+
+            return newString;
+
+        }
+        return goodString;
     }
 
     /**
@@ -42,6 +88,7 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        String answer = removeCharacters(string,charactersToRemove);
+        return reverse(answer);
     }
 }

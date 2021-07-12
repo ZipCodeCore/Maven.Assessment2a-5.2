@@ -19,7 +19,7 @@ public class ShelterAddRemoveContainsTest {
         // given
         int numberOfPerson = 10;
         Supplier<Ageable> supplier = Person::new;
-        Shelter<Person> shelter = new Shelter<>();
+        Shelter shelter = new Shelter();
 
         // when
         test(numberOfPerson, supplier, shelter);
@@ -30,7 +30,7 @@ public class ShelterAddRemoveContainsTest {
         // given
         int numberOfPerson = 10;
         Supplier<Ageable> supplier = Dog::new;
-        Shelter<Person> shelter = new Shelter<>();
+        Shelter shelter = new Shelter();
 
         // when
         test(numberOfPerson, supplier, shelter);
@@ -41,7 +41,7 @@ public class ShelterAddRemoveContainsTest {
         // given
         int numberOfPerson = 10;
         Supplier<Ageable> supplier = Cat::new;
-        Shelter<Person> shelter = new Shelter<>();
+        Shelter shelter = new Shelter();
 
         // when
         test(numberOfPerson, supplier, shelter);
