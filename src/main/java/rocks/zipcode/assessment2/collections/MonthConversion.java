@@ -1,5 +1,9 @@
 package rocks.zipcode.assessment2.collections;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 /**
  * Use a map to solve
  */
@@ -8,8 +12,11 @@ public class MonthConversion {
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
      * @param monthName - name of month
      */
-    public void add(Integer monthNumber, String monthName) {
 
+    Map<Integer, String> ordinalMonths = new LinkedHashMap<Integer, String>();
+
+    public void add(Integer monthNumber, String monthName) {
+        ordinalMonths.put(monthNumber,monthName);
     }
 
     /**
@@ -17,15 +24,23 @@ public class MonthConversion {
      * @return the name of the respective month
      */
     public String getName(Integer monthNumber) {
-        throw new NullPointerException();
+        if (ordinalMonths.containsKey(monthNumber) == false){return null;}
+        return ordinalMonths.get(monthNumber);
     }
 
     /**
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
-        return (Integer)null;
+    public Integer getNumber(String monthName) {
+        if (ordinalMonths.containsValue(monthName) == false){return null;}
+        for (int i = 1; i <=12; i++)
+            if (ordinalMonths.containsKey(i)) {
+                if (ordinalMonths.get(i).equals(monthName) == true) {
+                    return i;
+                }
+            }
+        return 0;
     }
 
     /**
@@ -33,7 +48,8 @@ public class MonthConversion {
      * @return true if the monthNumber is in the keySet
      */
     public Boolean isValidNumber(Integer monthNumber) {
-        return null;
+        if (ordinalMonths.containsKey(monthNumber) == true){return true;}
+        return false;
     }
 
     /**
@@ -41,14 +57,16 @@ public class MonthConversion {
      * @return true if the monthName is in the valueSet
      */
     public Boolean isValidMonth(String monthName) {
-        return null;
+        if (ordinalMonths.containsValue(monthName) == true){return true;}
+        return false;
     }
 
     /**
      * @return number of entries in this mapping
      */
     public Integer size() {
-        return -1;
+
+        return ordinalMonths.size();
     }
 
     /**
@@ -56,6 +74,6 @@ public class MonthConversion {
      * @param monthName - name of month
      */
     public void update(Integer monthNumber, String monthName) {
-
+        ordinalMonths.replace(monthNumber,monthName);
     }
 }
